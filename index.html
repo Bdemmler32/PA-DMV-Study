@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PA DMV Study — Pennsylvania Driver's License Prep</title>
+  <meta name="description" content="Study for the Pennsylvania driver's license written and road test. Covers all PennDOT topics with practice quizzes, mock exam, flashcards, and a full study guide.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- TOP HEADER -->
+  <header id="app-header">
+    <div class="header-brand">
+      <div class="header-shield">PA</div>
+      PA DMV Study
+    </div>
+  </header>
+
+  <!-- PROFILE BAR (shown after login) -->
+  <div id="profile-bar" class="hidden"></div>
+
+  <!-- NAVIGATION TABS (shown after login) -->
+  <nav id="app-nav" class="hidden">
+    <button data-tab="dashboard">Dashboard</button>
+    <button data-tab="study">📖 Study Guide</button>
+    <button data-tab="signs">🚦 Road Signs</button>
+    <button data-tab="flashcards">🃏 Flashcards</button>
+    <button data-tab="quiz">✏️ Practice Quiz</button>
+    <button data-tab="exam">🏛️ Mock Exam</button>
+  </nav>
+
+  <!-- MAIN CONTENT AREA -->
+  <main id="main-content"></main>
+
+  <!-- MODAL OVERLAY -->
+  <div id="modal-overlay"></div>
+
+  <!-- SCRIPTS (order matters) -->
+  <script src="js/data.js"></script>
+  <script src="js/profiles.js"></script>
+  <script src="js/study.js"></script>
+  <script src="js/flashcards.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/exam.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
