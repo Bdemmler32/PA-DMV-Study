@@ -2,48 +2,138 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PA DMV Study — Pennsylvania Driver's License Prep</title>
-  <meta name="description" content="Study for the Pennsylvania driver's license written and road test. Covers all PennDOT topics with practice quizzes, mock exam, flashcards, and a full study guide.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>PA DMV Study v03 — Pennsylvania Driver's License Prep</title>
+  <meta name="description" content="Complete Pennsylvania DMV study platform. Signs, laws, practice quizzes, mock exams, and flashcards — all from the official PA Driver's Manual.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Barlow+Condensed:wght@600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <!-- TOP HEADER -->
-  <header id="app-header">
-    <div class="header-brand">
-      <div class="header-shield">PA</div>
-      PA DMV Study
+  <!-- ── PROFILE SCREEN (shown before login) ───────────────── -->
+  <div id="profile-screen" class="screen active">
+    <div class="ps-bg"></div>
+    <div class="ps-content">
+      <div class="ps-logo">
+        <div class="ps-shield">
+          <span class="ps-shield-pa">PA</span>
+          <i class="fa-solid fa-star ps-shield-star"></i>
+        </div>
+        <div class="ps-title-block">
+          <h1 class="ps-title">PA DMV Study</h1>
+          <p class="ps-sub">Pennsylvania Driver's License Preparation</p>
+        </div>
+      </div>
+      <div class="ps-card">
+        <h2 class="ps-card-heading">Select Profile</h2>
+        <div id="profile-slots" class="profile-slots"></div>
+      </div>
     </div>
-  </header>
+  </div>
 
-  <!-- PROFILE BAR (shown after login) -->
-  <div id="profile-bar" class="hidden"></div>
+  <!-- ── MAIN APP (shown after login) ──────────────────────── -->
+  <div id="app-screen" class="screen">
 
-  <!-- NAVIGATION TABS (shown after login) -->
-  <nav id="app-nav" class="hidden">
-    <button data-tab="dashboard">Dashboard</button>
-    <button data-tab="study">📖 Study Guide</button>
-    <button data-tab="signs">🚦 Road Signs</button>
-    <button data-tab="flashcards">🃏 Flashcards</button>
-    <button data-tab="quiz">✏️ Practice Quiz</button>
-    <button data-tab="exam">🏛️ Mock Exam</button>
-  </nav>
+    <!-- SIDEBAR (desktop) -->
+    <aside id="sidebar">
+      <div class="sidebar-logo">
+        <div class="sb-shield">PA</div>
+        <span class="sb-title">PA DMV</span>
+      </div>
+      <nav class="sidebar-nav">
+        <button class="nav-item active" data-tab="dashboard">
+          <i class="fa-solid fa-gauge-high nav-icon"></i>
+          <span>Dashboard</span>
+        </button>
+        <div class="nav-section-label">STUDY</div>
+        <button class="nav-item" data-tab="study">
+          <i class="fa-solid fa-book-open nav-icon"></i>
+          <span>Study Guide</span>
+        </button>
+        <button class="nav-item" data-tab="signs">
+          <i class="fa-solid fa-sign-hanging nav-icon"></i>
+          <span>Road Signs</span>
+        </button>
+        <button class="nav-item" data-tab="flashcards">
+          <i class="fa-solid fa-layer-group nav-icon"></i>
+          <span>Flashcards</span>
+        </button>
+        <div class="nav-section-label">TEST PREP</div>
+        <button class="nav-item" data-tab="quiz">
+          <i class="fa-solid fa-pencil nav-icon"></i>
+          <span>Practice Quiz</span>
+        </button>
+        <button class="nav-item featured-nav" data-tab="exam">
+          <i class="fa-solid fa-graduation-cap nav-icon"></i>
+          <span>Mock Exam</span>
+          <span class="nav-badge">18 Q</span>
+        </button>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="sidebar-profile" id="sb-profile"></div>
+        <button class="sidebar-switch" id="sb-switch">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span>Switch Profile</span>
+        </button>
+      </div>
+    </aside>
 
-  <!-- MAIN CONTENT AREA -->
-  <main id="main-content"></main>
+    <!-- TOP BAR (mobile) -->
+    <header id="topbar">
+      <div class="topbar-left">
+        <div class="tb-shield">PA</div>
+        <span class="tb-title">PA DMV Study</span>
+      </div>
+      <div class="topbar-right" id="tb-profile"></div>
+    </header>
 
-  <!-- MODAL OVERLAY -->
-  <div id="modal-overlay"></div>
+    <!-- MAIN CONTENT -->
+    <main id="main-content">
+      <div id="tab-content"></div>
+    </main>
 
-  <!-- SCRIPTS (order matters) -->
+    <!-- BOTTOM NAV (mobile) -->
+    <nav id="bottom-nav">
+      <button class="bn-item active" data-tab="dashboard">
+        <i class="fa-solid fa-gauge-high"></i>
+        <span>Home</span>
+      </button>
+      <button class="bn-item" data-tab="study">
+        <i class="fa-solid fa-book-open"></i>
+        <span>Study</span>
+      </button>
+      <button class="bn-item" data-tab="signs">
+        <i class="fa-solid fa-sign-hanging"></i>
+        <span>Signs</span>
+      </button>
+      <button class="bn-item" data-tab="quiz">
+        <i class="fa-solid fa-pencil"></i>
+        <span>Quiz</span>
+      </button>
+      <button class="bn-item" data-tab="exam">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span>Exam</span>
+      </button>
+    </nav>
+
+  </div><!-- /app-screen -->
+
+  <!-- MODAL -->
+  <div id="modal-overlay">
+    <div class="modal-box" id="modal-box"></div>
+  </div>
+
+  <!-- SCRIPTS -->
   <script src="js/data.js"></script>
   <script src="js/profiles.js"></script>
   <script src="js/study.js"></script>
   <script src="js/flashcards.js"></script>
   <script src="js/quiz.js"></script>
   <script src="js/exam.js"></script>
+  <script src="js/signs.js"></script>
   <script src="js/app.js"></script>
-
 </body>
 </html>
