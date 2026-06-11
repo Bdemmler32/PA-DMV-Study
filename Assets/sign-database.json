@@ -1,0 +1,2479 @@
+{
+  "meta": {
+    "source": "Pennsylvania Driver's Manual (PUB 95, 4-21)",
+    "total_assets": 163,
+    "naming_convention": {
+      "prefix_reg": "reg_  = Regulatory sign",
+      "prefix_warn": "warn_ = Warning sign",
+      "prefix_wz": "wz_   = Work zone sign",
+      "prefix_guide": "guide_ = Guide/highway sign",
+      "prefix_svc": "svc_  = Service sign",
+      "prefix_sig": "sig_  = Traffic signal",
+      "prefix_scene": "scene_ = Scene/situation diagram",
+      "prefix_diag": "diag_ = Technical diagram",
+      "prefix_pave": "pave_ = Pavement marking diagram"
+    },
+    "folders": {
+      "signs/regulatory": "Regulatory signs \u2014 laws and restrictions",
+      "signs/warning": "Warning signs \u2014 hazards ahead",
+      "signs/work_zone": "Work zone and construction signs",
+      "signs/guide": "Guide and highway signs",
+      "signs/service": "Service and tourist signs",
+      "signs/signals": "Traffic signals and special signals",
+      "scenes": "Real-world driving situation diagrams",
+      "diagrams": "Technical and instructional diagrams"
+    },
+    "mutcd_edition": "MUTCD 11th Edition (2023)",
+    "mutcd_note": "Codes are MUTCD sign designations (R/W/S/M/I/D series) or MUTCD section references for signals and pavement markings."
+  },
+  "regulatory_signs": [
+    {
+      "id": "reg_stop",
+      "file": "signs/regulatory/reg_stop.png",
+      "name": "Stop",
+      "shape": "Octagon",
+      "color": "Red and white",
+      "meaning": "Come to a complete stop before the stop line or crosswalk. Yield to all traffic and pedestrians. Slowing without a full stop is illegal.",
+      "chapter": 2,
+      "tags": [
+        "stop",
+        "regulatory",
+        "intersection"
+      ],
+      "mutcd_code": "R1-1"
+    },
+    {
+      "id": "reg_stop_except_right_turn",
+      "file": "signs/regulatory/reg_stop_except_right_turn.png",
+      "name": "Stop \u2014 Except Right Turn",
+      "shape": "Rectangle",
+      "color": "Black and white",
+      "meaning": "Used in conjunction with a stop sign. Motorists may make a right turn without stopping.",
+      "chapter": 2,
+      "tags": [
+        "stop",
+        "right turn",
+        "regulatory"
+      ],
+      "mutcd_code": "R1-1 + R3-1 (plaque)"
+    },
+    {
+      "id": "reg_stop_4way",
+      "file": "signs/regulatory/reg_stop_4way.png",
+      "name": "Stop \u2014 4-Way",
+      "shape": "Octagon with plate",
+      "color": "Red and white",
+      "meaning": "All four approaches have stop signs. First vehicle to arrive goes first. Simultaneous arrival: yield to vehicle on the right.",
+      "chapter": 2,
+      "tags": [
+        "stop",
+        "4-way",
+        "intersection",
+        "regulatory"
+      ],
+      "mutcd_code": "R1-1 + R1-3P (4-WAY plate)"
+    },
+    {
+      "id": "reg_yield",
+      "file": "signs/regulatory/reg_yield.png",
+      "name": "Yield",
+      "shape": "Triangle (inverted)",
+      "color": "Red and white",
+      "meaning": "Slow down and give right-of-way to pedestrians and approaching traffic. Stop only if necessary. You must have a sufficient gap before proceeding.",
+      "chapter": 2,
+      "tags": [
+        "yield",
+        "regulatory",
+        "right-of-way"
+      ],
+      "mutcd_code": "R1-2"
+    },
+    {
+      "id": "reg_yield_to_oncoming",
+      "file": "signs/regulatory/reg_yield_to_oncoming.png",
+      "name": "Yield to Oncoming Traffic",
+      "shape": "Rectangle",
+      "color": "Black and white",
+      "meaning": "Used with yield signs at one-lane bridges or underpasses. You must yield right-of-way to opposing traffic.",
+      "chapter": 2,
+      "tags": [
+        "yield",
+        "one-lane",
+        "bridge",
+        "regulatory"
+      ],
+      "mutcd_code": "R1-2 + R4-9P (plaque)"
+    },
+    {
+      "id": "reg_railroad_crossbuck",
+      "file": "signs/regulatory/reg_railroad_crossbuck.png",
+      "name": "Railroad Crossbuck",
+      "shape": "Crossbuck (X)",
+      "color": "White with black lettering",
+      "meaning": "Treat as a Yield sign. Slow down and prepare to stop if you see or hear a train approaching.",
+      "chapter": 2,
+      "tags": [
+        "railroad",
+        "yield",
+        "crossbuck",
+        "regulatory"
+      ],
+      "mutcd_code": "R15-1"
+    },
+    {
+      "id": "reg_do_not_enter",
+      "file": "signs/regulatory/reg_do_not_enter.png",
+      "name": "Do Not Enter",
+      "shape": "Square with circle",
+      "color": "Red and white",
+      "meaning": "Do not drive onto this street or ramp from your direction. Often posted at the beginning of one-way streets and highway ramps.",
+      "chapter": 2,
+      "tags": [
+        "do not enter",
+        "one-way",
+        "wrong direction",
+        "regulatory"
+      ],
+      "mutcd_code": "R5-1"
+    },
+    {
+      "id": "reg_wrong_way",
+      "file": "signs/regulatory/reg_wrong_way.png",
+      "name": "Wrong Way",
+      "shape": "Rectangle",
+      "color": "Red and white",
+      "meaning": "You are traveling in the wrong direction. Posted farther down the wrong-way street to catch drivers who missed the Do Not Enter sign. Turn around safely.",
+      "chapter": 2,
+      "tags": [
+        "wrong way",
+        "one-way",
+        "regulatory"
+      ],
+      "mutcd_code": "R5-1a"
+    },
+    {
+      "id": "reg_one_way_left",
+      "file": "signs/regulatory/reg_one_way_left.png",
+      "name": "One Way",
+      "shape": "Rectangle",
+      "color": "Black and white",
+      "meaning": "Traffic flows in one direction only \u2014 the direction the arrow points. Turning onto a one-way street in the wrong direction could cause a head-on collision.",
+      "chapter": 2,
+      "tags": [
+        "one way",
+        "direction",
+        "regulatory"
+      ],
+      "mutcd_code": "R6-1L"
+    },
+    {
+      "id": "reg_divided_highway",
+      "file": "signs/regulatory/reg_divided_highway.png",
+      "name": "Divided Highway",
+      "shape": "Rectangle",
+      "color": "Black and white",
+      "meaning": "The road you are on intersects a divided highway \u2014 two one-way roadways separated by a median. At the first roadway, turn right only; at the second, turn left only.",
+      "chapter": 2,
+      "tags": [
+        "divided highway",
+        "median",
+        "regulatory"
+      ],
+      "mutcd_code": "R6-3"
+    },
+    {
+      "id": "reg_no_trucks",
+      "file": "signs/regulatory/reg_no_trucks.png",
+      "name": "No Trucks",
+      "shape": "Square",
+      "color": "Black, white, and red",
+      "meaning": "Trucks may not use this roadway.",
+      "chapter": 2,
+      "tags": [
+        "no trucks",
+        "restriction",
+        "regulatory"
+      ],
+      "mutcd_code": "R5-2"
+    },
+    {
+      "id": "reg_no_bicycles",
+      "file": "signs/regulatory/reg_no_bicycles.png",
+      "name": "No Bicycles",
+      "shape": "Square",
+      "color": "Black, white, and red",
+      "meaning": "Bicycles may not use this roadway.",
+      "chapter": 2,
+      "tags": [
+        "no bicycles",
+        "restriction",
+        "regulatory"
+      ],
+      "mutcd_code": "R5-6"
+    },
+    {
+      "id": "reg_no_pedestrian_crossing",
+      "file": "signs/regulatory/reg_no_pedestrian_crossing.png",
+      "name": "No Pedestrian Crossing",
+      "shape": "Square",
+      "color": "Black, white, and red",
+      "meaning": "Pedestrians may not cross at this location.",
+      "chapter": 2,
+      "tags": [
+        "no pedestrians",
+        "restriction",
+        "regulatory"
+      ],
+      "mutcd_code": "R9-3a"
+    },
+    {
+      "id": "reg_no_u_turn",
+      "file": "signs/regulatory/reg_no_u_turn.png",
+      "name": "No U-Turn",
+      "shape": "Square",
+      "color": "Black, white, and red",
+      "meaning": "U-turns are prohibited at this location. Do not make a complete turn to go in the opposite direction.",
+      "chapter": 2,
+      "tags": [
+        "no u-turn",
+        "restriction",
+        "regulatory"
+      ],
+      "mutcd_code": "R3-4"
+    },
+    {
+      "id": "reg_no_right_turn",
+      "file": "signs/regulatory/reg_no_right_turn.png",
+      "name": "No Right Turn",
+      "shape": "Square",
+      "color": "Black, white, and red",
+      "meaning": "Right turns are prohibited at this intersection.",
+      "chapter": 2,
+      "tags": [
+        "no right turn",
+        "restriction",
+        "regulatory"
+      ],
+      "mutcd_code": "R3-1"
+    },
+    {
+      "id": "reg_no_left_turn",
+      "file": "signs/regulatory/reg_no_left_turn.png",
+      "name": "No Left Turn",
+      "shape": "Square",
+      "color": "Black, white, and red",
+      "meaning": "Left turns are prohibited at this intersection.",
+      "chapter": 2,
+      "tags": [
+        "no left turn",
+        "restriction",
+        "regulatory"
+      ],
+      "mutcd_code": "R3-2"
+    },
+    {
+      "id": "reg_no_parking",
+      "file": "signs/regulatory/reg_no_parking.png",
+      "name": "No Parking",
+      "shape": "Square",
+      "color": "Black, white, and red",
+      "meaning": "You may not park a vehicle at this location. Stopping briefly to pick up or drop off a passenger may be permitted.",
+      "chapter": 2,
+      "tags": [
+        "no parking",
+        "restriction",
+        "parking",
+        "regulatory"
+      ],
+      "mutcd_code": "R8-3"
+    },
+    {
+      "id": "reg_do_not_pass",
+      "file": "signs/regulatory/reg_do_not_pass.png",
+      "name": "Do Not Pass",
+      "shape": "Rectangle",
+      "color": "Black and white",
+      "meaning": "Passing vehicles ahead is not permitted in this area. Often accompanied by the yellow No Passing Zone pennant sign.",
+      "chapter": 2,
+      "tags": [
+        "do not pass",
+        "passing",
+        "restriction",
+        "regulatory"
+      ],
+      "mutcd_code": "R4-1"
+    },
+    {
+      "id": "reg_no_turn_on_red",
+      "file": "signs/regulatory/reg_no_turn_on_red.png",
+      "name": "No Turn on Red",
+      "shape": "Rectangle",
+      "color": "Black and white",
+      "meaning": "You may not turn in the indicated direction during a red light cycle at this intersection. You must wait for a green signal.",
+      "chapter": 2,
+      "tags": [
+        "no turn on red",
+        "red light",
+        "restriction",
+        "regulatory"
+      ],
+      "mutcd_code": "R10-11a"
+    },
+    {
+      "id": "reg_keep_right",
+      "file": "signs/regulatory/reg_keep_right.png",
+      "name": "Keep Right",
+      "shape": "Rectangle",
+      "color": "Black and white",
+      "meaning": "Drivers must stay to the right of a traffic island, divider, or obstruction.",
+      "chapter": 2,
+      "tags": [
+        "keep right",
+        "traffic island",
+        "regulatory"
+      ],
+      "mutcd_code": "R4-7a"
+    },
+    {
+      "id": "reg_speed_limit_65",
+      "file": "signs/regulatory/reg_speed_limit_65.png",
+      "name": "Speed Limit 65",
+      "shape": "Rectangle (vertical)",
+      "color": "Black and white",
+      "meaning": "Maximum legal speed is 65 mph under ideal conditions. You must drive slower when conditions require it.",
+      "chapter": 2,
+      "tags": [
+        "speed limit",
+        "regulatory",
+        "highway"
+      ],
+      "mutcd_code": "R2-1"
+    },
+    {
+      "id": "reg_reserved_parking_disabled",
+      "file": "signs/regulatory/reg_reserved_parking_disabled.png",
+      "name": "Reserved Parking (Disabled)",
+      "shape": "Rectangle",
+      "color": "Blue and white",
+      "meaning": "Parking reserved for vehicles displaying valid disabled person placards or registration plates. Unauthorized parking results in fines and towing.",
+      "chapter": 2,
+      "tags": [
+        "parking",
+        "disabled",
+        "handicap",
+        "accessibility",
+        "regulatory"
+      ],
+      "mutcd_code": "R7-8"
+    },
+    {
+      "id": "reg_lane_left_or_straight",
+      "file": "signs/regulatory/reg_lane_left_or_straight.png",
+      "name": "Lane Use \u2014 Left Turn or Straight",
+      "shape": "Rectangle",
+      "color": "Black and white",
+      "meaning": "If you are in this lane, you may turn left or continue straight through the intersection.",
+      "chapter": 2,
+      "tags": [
+        "lane control",
+        "directional",
+        "regulatory"
+      ],
+      "mutcd_code": "R3-8"
+    },
+    {
+      "id": "reg_center_lane_left_only",
+      "file": "signs/regulatory/reg_center_lane_left_only.png",
+      "name": "Center Lane \u2014 Left Turn Only",
+      "shape": "Rectangle",
+      "color": "Black and white",
+      "meaning": "This lane is reserved exclusively for left-turning vehicles traveling in either direction. Do not use for through traffic or passing.",
+      "chapter": 2,
+      "tags": [
+        "center lane",
+        "left turn",
+        "regulatory"
+      ],
+      "mutcd_code": "R3-9b"
+    },
+    {
+      "id": "reg_lane_turn_left_or_right",
+      "file": "signs/regulatory/reg_lane_turn_left_or_right.png",
+      "name": "Lane Use \u2014 Turn Left or Right",
+      "shape": "Rectangle",
+      "color": "Black and white",
+      "meaning": "You may turn in either direction the arrows point from this lane.",
+      "chapter": 2,
+      "tags": [
+        "lane control",
+        "directional",
+        "regulatory"
+      ],
+      "mutcd_code": "R3-7"
+    },
+    {
+      "id": "reg_lane_straight_or_right",
+      "file": "signs/regulatory/reg_lane_straight_or_right.png",
+      "name": "Lane Use \u2014 Straight or Right Turn",
+      "shape": "Rectangle",
+      "color": "Black and white",
+      "meaning": "You may go straight or turn right from this lane.",
+      "chapter": 2,
+      "tags": [
+        "lane control",
+        "directional",
+        "regulatory"
+      ],
+      "mutcd_code": "R3-6"
+    },
+    {
+      "id": "reg_lane_turn_right_only",
+      "file": "signs/regulatory/reg_lane_turn_right_only.png",
+      "name": "Lane Use \u2014 Turn Right Only",
+      "shape": "Rectangle",
+      "color": "Black and white",
+      "meaning": "You must turn right at the intersection. You may not continue straight even if you are in this lane by mistake.",
+      "chapter": 2,
+      "tags": [
+        "lane control",
+        "right turn only",
+        "regulatory"
+      ],
+      "mutcd_code": "R3-5R"
+    },
+    {
+      "id": "reg_lane_turn_left_only",
+      "file": "signs/regulatory/reg_lane_turn_left_only.png",
+      "name": "Lane Use \u2014 Turn Left Only",
+      "shape": "Rectangle",
+      "color": "Black and white",
+      "meaning": "You must turn left at the intersection. You may not continue straight even if you are in this lane by mistake.",
+      "chapter": 2,
+      "tags": [
+        "lane control",
+        "left turn only",
+        "regulatory"
+      ],
+      "mutcd_code": "R3-5L"
+    },
+    {
+      "id": "reg_left_turn_yield_flashing_yellow",
+      "file": "signs/regulatory/reg_left_turn_yield_flashing_yellow.png",
+      "name": "Left Turn Yield on Flashing Yellow Arrow",
+      "shape": "Rectangle",
+      "color": "Black and white",
+      "meaning": "A left turn is permitted when the flashing yellow arrow is displayed, but you must yield to oncoming traffic and pedestrians. Your turn is NOT protected.",
+      "chapter": 2,
+      "tags": [
+        "left turn",
+        "yield",
+        "flashing yellow arrow",
+        "regulatory"
+      ],
+      "mutcd_code": "R10-12"
+    },
+    {
+      "id": "reg_left_turn_yield_on_green",
+      "file": "signs/regulatory/reg_left_turn_yield_on_green.png",
+      "name": "Left Turn Yield on Green",
+      "shape": "Rectangle",
+      "color": "Black and white",
+      "meaning": "Left turns are permitted on green but you must yield to oncoming traffic. Your turn is not protected by a dedicated arrow.",
+      "chapter": 2,
+      "tags": [
+        "left turn",
+        "yield",
+        "green light",
+        "regulatory"
+      ],
+      "mutcd_code": "R10-12a"
+    },
+    {
+      "id": "reg_opposing_traffic_extended_green",
+      "file": "signs/regulatory/reg_opposing_traffic_extended_green.png",
+      "name": "Opposing Traffic Has Extended Green",
+      "shape": "Rectangle",
+      "color": "Black and white",
+      "meaning": "After your signal turns red, opposing traffic may continue moving for a brief period. Do not proceed until it is safe.",
+      "chapter": 2,
+      "tags": [
+        "extended green",
+        "opposing traffic",
+        "regulatory"
+      ],
+      "mutcd_code": "R10-13"
+    },
+    {
+      "id": "reg_lane_right_turn_signal",
+      "file": "signs/regulatory/reg_lane_right_turn_signal.png",
+      "name": "Lane Use \u2014 Right Turn Signal",
+      "shape": "Rectangle",
+      "color": "Black and white",
+      "meaning": "This lane is designated for right-turning vehicles only. If you are in this lane, you must turn right at the upcoming intersection.",
+      "chapter": 2,
+      "tags": [
+        "lane control",
+        "right turn",
+        "regulatory"
+      ],
+      "mutcd_code": "R3-5R"
+    }
+  ],
+  "warning_signs": [
+    {
+      "id": "warn_no_passing_zone",
+      "file": "signs/warning/warn_no_passing_zone.png",
+      "name": "No Passing Zone",
+      "shape": "Pennant (triangle pointing right)",
+      "color": "Yellow and black",
+      "meaning": "The only pennant-shaped warning sign. Marks the beginning of a no-passing zone. Posted on the left side of the road facing the driver.",
+      "chapter": 2,
+      "tags": [
+        "no passing",
+        "pennant",
+        "warning"
+      ],
+      "mutcd_code": "W14-3"
+    },
+    {
+      "id": "warn_chevron_left",
+      "file": "signs/warning/warn_chevron_left.png",
+      "name": "Chevron \u2014 Left",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "Sharp change in road direction to the left. Road bends the direction the chevron points. Often placed throughout curves for additional guidance.",
+      "chapter": 2,
+      "tags": [
+        "chevron",
+        "curve",
+        "direction",
+        "warning"
+      ],
+      "mutcd_code": "W1-8L"
+    },
+    {
+      "id": "warn_chevron_right",
+      "file": "signs/warning/warn_chevron_right.png",
+      "name": "Chevron \u2014 Right",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "Sharp change in road direction to the right. Road bends the direction the chevron points.",
+      "chapter": 2,
+      "tags": [
+        "chevron",
+        "curve",
+        "direction",
+        "warning"
+      ],
+      "mutcd_code": "W1-8R"
+    },
+    {
+      "id": "warn_left_curve",
+      "file": "signs/warning/warn_left_curve.png",
+      "name": "Left Curve Ahead",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "The road curves to the left. Slow down, stay in the center of your lane, and prepare to navigate the left-bending curve.",
+      "chapter": 2,
+      "tags": [
+        "curve",
+        "left",
+        "warning"
+      ],
+      "mutcd_code": "W1-1L"
+    },
+    {
+      "id": "warn_right_curve",
+      "file": "signs/warning/warn_right_curve.png",
+      "name": "Right Curve Ahead",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "The road curves to the right. Slow down and position your vehicle slightly right of center as you drive through.",
+      "chapter": 2,
+      "tags": [
+        "curve",
+        "right",
+        "warning"
+      ],
+      "mutcd_code": "W1-1R"
+    },
+    {
+      "id": "warn_sharp_left_turn",
+      "file": "signs/warning/warn_sharp_left_turn.png",
+      "name": "Sharp Left Turn",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "The road turns sharply to the left. Slow down substantially. May have an advisory speed on the sign or posted below it.",
+      "chapter": 2,
+      "tags": [
+        "sharp turn",
+        "left",
+        "warning"
+      ],
+      "mutcd_code": "W1-2L"
+    },
+    {
+      "id": "warn_sharp_right_turn",
+      "file": "signs/warning/warn_sharp_right_turn.png",
+      "name": "Sharp Right Turn",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "The road turns sharply to the right. Slow down substantially. Position slightly right of center.",
+      "chapter": 2,
+      "tags": [
+        "sharp turn",
+        "right",
+        "warning"
+      ],
+      "mutcd_code": "W1-2R"
+    },
+    {
+      "id": "warn_set_of_curves_left",
+      "file": "signs/warning/warn_set_of_curves_left.png",
+      "name": "Set of Curves \u2014 First Left",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "A set of two curves \u2014 the first bending left, the second bending right. Slow down and prepare to navigate both.",
+      "chapter": 2,
+      "tags": [
+        "curves",
+        "S-curve",
+        "warning"
+      ],
+      "mutcd_code": "W1-4L"
+    },
+    {
+      "id": "warn_set_of_curves_right",
+      "file": "signs/warning/warn_set_of_curves_right.png",
+      "name": "Set of Curves \u2014 First Right",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "A set of two curves \u2014 the first bending right, the second bending left.",
+      "chapter": 2,
+      "tags": [
+        "curves",
+        "S-curve",
+        "warning"
+      ],
+      "mutcd_code": "W1-4R"
+    },
+    {
+      "id": "warn_winding_road",
+      "file": "signs/warning/warn_winding_road.png",
+      "name": "Winding Road",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "Three or more curves in a row on the road ahead. Drive carefully and at a reduced speed through the entire section.",
+      "chapter": 2,
+      "tags": [
+        "winding",
+        "curves",
+        "warning"
+      ],
+      "mutcd_code": "W1-5"
+    },
+    {
+      "id": "warn_one_direction_arrow",
+      "file": "signs/warning/warn_one_direction_arrow.png",
+      "name": "One Direction Large Arrow",
+      "shape": "Rectangle (horizontal)",
+      "color": "Yellow and black",
+      "meaning": "The road changes direction at an extreme angle. Slow down as much as you would for a turn at an intersection.",
+      "chapter": 2,
+      "tags": [
+        "direction change",
+        "arrow",
+        "warning"
+      ],
+      "mutcd_code": "W1-6"
+    },
+    {
+      "id": "warn_road_entering_curve",
+      "file": "signs/warning/warn_road_entering_curve.png",
+      "name": "Road Entering Curve",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "The main road curves with a side road entering from the right. A driver preparing to enter may not see you. Approach with extra caution.",
+      "chapter": 2,
+      "tags": [
+        "curve",
+        "side road",
+        "warning"
+      ],
+      "mutcd_code": "W1-10R"
+    },
+    {
+      "id": "warn_truck_rollover",
+      "file": "signs/warning/warn_truck_rollover.png",
+      "name": "Truck Rollover",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "This curve has a high risk of truck rollover when traveled at excessive speeds. Truck drivers should reduce speed significantly.",
+      "chapter": 2,
+      "tags": [
+        "truck",
+        "rollover",
+        "curve",
+        "warning"
+      ],
+      "mutcd_code": "W1-13"
+    },
+    {
+      "id": "warn_advisory_speed_25",
+      "file": "signs/warning/warn_advisory_speed_25.png",
+      "name": "Advisory Speed Sign",
+      "shape": "Square",
+      "color": "Yellow and black",
+      "meaning": "Used with any diamond-shaped warning sign. Indicates the highest safe speed (in this example, 25 mph) to travel through the upcoming hazard.",
+      "chapter": 2,
+      "tags": [
+        "speed",
+        "advisory",
+        "warning"
+      ],
+      "mutcd_code": "W13-1P (Advisory Speed Plaque)"
+    },
+    {
+      "id": "warn_merging_traffic",
+      "file": "signs/warning/warn_merging_traffic.png",
+      "name": "Merging Traffic",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "Traffic from another roadway or ramp is merging into your lane. Entering traffic must yield to traffic already on the major roadway.",
+      "chapter": 2,
+      "tags": [
+        "merge",
+        "warning"
+      ],
+      "mutcd_code": "W4-1"
+    },
+    {
+      "id": "warn_added_lane",
+      "file": "signs/warning/warn_added_lane.png",
+      "name": "Added Lane",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "Two roadways are meeting, but merging is not required because a new lane has been added. Entering traffic uses the new lane.",
+      "chapter": 2,
+      "tags": [
+        "lane added",
+        "merge",
+        "warning"
+      ],
+      "mutcd_code": "W4-3"
+    },
+    {
+      "id": "warn_weave_area",
+      "file": "signs/warning/warn_weave_area.png",
+      "name": "Weave Area",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "You will be merging with another roadway while some traffic is exiting and crossing your path. Use caution.",
+      "chapter": 2,
+      "tags": [
+        "weave",
+        "merge",
+        "warning"
+      ],
+      "mutcd_code": "W4-7"
+    },
+    {
+      "id": "warn_divided_highway_begins",
+      "file": "signs/warning/warn_divided_highway_begins.png",
+      "name": "Divided Highway Begins",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "The highway ahead becomes divided with a median separating traffic. Keep to the right of the divider.",
+      "chapter": 2,
+      "tags": [
+        "divided highway",
+        "median",
+        "warning"
+      ],
+      "mutcd_code": "W6-1"
+    },
+    {
+      "id": "warn_divided_highway_ends",
+      "file": "signs/warning/warn_divided_highway_ends.png",
+      "name": "Divided Highway Ends",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "The divided highway ends ahead. You will be on a two-way road. Keep right and watch for oncoming traffic.",
+      "chapter": 2,
+      "tags": [
+        "divided highway",
+        "two-way",
+        "warning"
+      ],
+      "mutcd_code": "W6-2"
+    },
+    {
+      "id": "warn_two_way_traffic",
+      "file": "signs/warning/warn_two_way_traffic.png",
+      "name": "Two-Way Traffic Ahead",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "The one-way road or street ends and you will be on a two-lane road with traffic moving in both directions. Stay in your lane and keep right of center.",
+      "chapter": 2,
+      "tags": [
+        "two-way",
+        "traffic",
+        "warning"
+      ],
+      "mutcd_code": "W6-3"
+    },
+    {
+      "id": "warn_lane_ends_merge",
+      "file": "signs/warning/warn_lane_ends_merge.png",
+      "name": "Lane Ends",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "One lane on a multi-lane road ends ahead. Traffic in the ending lane must merge safely into the continuing lane.",
+      "chapter": 2,
+      "tags": [
+        "lane ends",
+        "merge",
+        "warning"
+      ],
+      "mutcd_code": "W4-2"
+    },
+    {
+      "id": "warn_right_lane_ends",
+      "file": "signs/warning/warn_right_lane_ends.png",
+      "name": "Right Lane Ends",
+      "shape": "Rectangle",
+      "color": "Yellow and black",
+      "meaning": "The right lane ends ahead. Drivers in the right lane must merge left. Signal and find a safe gap.",
+      "chapter": 2,
+      "tags": [
+        "lane ends",
+        "right lane",
+        "merge",
+        "warning"
+      ],
+      "mutcd_code": "W9-2"
+    },
+    {
+      "id": "warn_lane_ends_merge_left",
+      "file": "signs/warning/warn_lane_ends_merge_left.png",
+      "name": "Lane Ends \u2014 Merge Left",
+      "shape": "Rectangle",
+      "color": "Yellow and black",
+      "meaning": "Your lane ends ahead and you must merge into the lane to the left.",
+      "chapter": 2,
+      "tags": [
+        "lane ends",
+        "merge left",
+        "warning"
+      ],
+      "mutcd_code": "W9-1"
+    },
+    {
+      "id": "warn_intersection_cross",
+      "file": "signs/warning/warn_intersection_cross.png",
+      "name": "Cross Road Intersection",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "A cross road intersection is ahead. Approach with caution \u2014 traffic may enter from all four directions.",
+      "chapter": 2,
+      "tags": [
+        "intersection",
+        "cross road",
+        "warning"
+      ],
+      "mutcd_code": "W2-1"
+    },
+    {
+      "id": "warn_intersection_side_road",
+      "file": "signs/warning/warn_intersection_side_road.png",
+      "name": "Side Road Intersection",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "A side road enters from the right ahead. A driver entering from the side road may pull out in front of you.",
+      "chapter": 2,
+      "tags": [
+        "intersection",
+        "side road",
+        "warning"
+      ],
+      "mutcd_code": "W2-2R"
+    },
+    {
+      "id": "warn_intersection_t",
+      "file": "signs/warning/warn_intersection_t.png",
+      "name": "T-Intersection",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "The road you are on ends at a T-intersection. You must turn left or right \u2014 the road does not continue straight.",
+      "chapter": 2,
+      "tags": [
+        "intersection",
+        "T-intersection",
+        "warning"
+      ],
+      "mutcd_code": "W2-4"
+    },
+    {
+      "id": "warn_intersection_y",
+      "file": "signs/warning/warn_intersection_y.png",
+      "name": "Y-Intersection",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "A Y-shaped intersection ahead. The road splits into two branches.",
+      "chapter": 2,
+      "tags": [
+        "intersection",
+        "Y-intersection",
+        "warning"
+      ],
+      "mutcd_code": "W2-5"
+    },
+    {
+      "id": "warn_intersection_circular",
+      "file": "signs/warning/warn_intersection_circular.png",
+      "name": "Circular Intersection (Roundabout)",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "A roundabout or traffic circle is ahead. Yield to traffic already in the circle. Travel counterclockwise.",
+      "chapter": 2,
+      "tags": [
+        "roundabout",
+        "circular intersection",
+        "warning"
+      ],
+      "mutcd_code": "W2-6"
+    },
+    {
+      "id": "warn_two_direction_arrow",
+      "file": "signs/warning/warn_two_direction_arrow.png",
+      "name": "Two-Direction Large Arrow",
+      "shape": "Rectangle (horizontal)",
+      "color": "Yellow and black",
+      "meaning": "Posted at the far side of a T-intersection. You can only go left or right \u2014 the road does not continue straight through.",
+      "chapter": 2,
+      "tags": [
+        "direction",
+        "T-intersection",
+        "warning"
+      ],
+      "mutcd_code": "W1-7"
+    },
+    {
+      "id": "warn_narrow_bridge",
+      "file": "signs/warning/warn_narrow_bridge.png",
+      "name": "Narrow Bridge or Underpass Ahead",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "The bridge or underpass ahead is narrower than the road. Lanes become narrower and there is generally no shoulder. Stay in your lane.",
+      "chapter": 2,
+      "tags": [
+        "narrow bridge",
+        "underpass",
+        "warning"
+      ],
+      "mutcd_code": "W5-2"
+    },
+    {
+      "id": "warn_slippery_when_wet",
+      "file": "signs/warning/warn_slippery_when_wet.png",
+      "name": "Slippery When Wet",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "Road surface is especially slippery in wet weather. Reduce speed, increase following distance, and avoid quick acceleration or braking.",
+      "chapter": 2,
+      "tags": [
+        "slippery",
+        "wet",
+        "traction",
+        "warning"
+      ],
+      "mutcd_code": "W8-5"
+    },
+    {
+      "id": "warn_deer_crossing",
+      "file": "signs/warning/warn_deer_crossing.png",
+      "name": "Deer Crossing",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "Deer frequently cross in this area and crashes with deer have occurred. Be alert especially at dawn and dusk.",
+      "chapter": 2,
+      "tags": [
+        "deer",
+        "animal crossing",
+        "warning"
+      ],
+      "mutcd_code": "W11-3"
+    },
+    {
+      "id": "warn_low_clearance",
+      "file": "signs/warning/warn_low_clearance.png",
+      "name": "Low Clearance",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "An underpass, tunnel, or parking garage has limited height. If your vehicle is taller than the posted clearance, do not enter.",
+      "chapter": 2,
+      "tags": [
+        "low clearance",
+        "height",
+        "warning"
+      ],
+      "mutcd_code": "W12-2"
+    },
+    {
+      "id": "warn_low_shoulder",
+      "file": "signs/warning/warn_low_shoulder.png",
+      "name": "Low Shoulder",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "The shoulder is lower than the road surface by up to 3 inches. If you drift onto the shoulder, do not brake or steer sharply \u2014 ease back gently.",
+      "chapter": 2,
+      "tags": [
+        "shoulder",
+        "low shoulder",
+        "warning"
+      ],
+      "mutcd_code": "W8-9a"
+    },
+    {
+      "id": "warn_shoulder_drop_off",
+      "file": "signs/warning/warn_shoulder_drop_off.png",
+      "name": "Shoulder Drop-Off",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "Severe drop-off where the shoulder meets the road edge. Drifting off the pavement could cause loss of vehicle control.",
+      "chapter": 2,
+      "tags": [
+        "shoulder",
+        "drop-off",
+        "warning"
+      ],
+      "mutcd_code": "W8-9b"
+    },
+    {
+      "id": "warn_soft_shoulder",
+      "file": "signs/warning/warn_soft_shoulder.png",
+      "name": "Soft Shoulder",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "The shoulder is unpaved and soft. If you drive on it, your vehicle may sink in. Do not use the soft shoulder as a travel lane.",
+      "chapter": 2,
+      "tags": [
+        "shoulder",
+        "soft",
+        "unpaved",
+        "warning"
+      ],
+      "mutcd_code": "W8-4"
+    },
+    {
+      "id": "warn_hill_downgrade",
+      "file": "signs/warning/warn_hill_downgrade.png",
+      "name": "Hill / Downgrade",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "A steep hill or downgrade is ahead. Slow down and shift to a lower gear to control your speed and reduce brake wear.",
+      "chapter": 2,
+      "tags": [
+        "hill",
+        "downgrade",
+        "steep",
+        "warning"
+      ],
+      "mutcd_code": "W7-1"
+    },
+    {
+      "id": "warn_traffic_signal_ahead",
+      "file": "signs/warning/warn_traffic_signal_ahead.png",
+      "name": "Traffic Signal Ahead",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "A traffic signal is at the intersection ahead that you may not be able to see due to a curve, hill, or obstruction. Slow down and be prepared to stop.",
+      "chapter": 2,
+      "tags": [
+        "traffic signal",
+        "warning"
+      ],
+      "mutcd_code": "W3-3"
+    },
+    {
+      "id": "warn_stop_sign_ahead",
+      "file": "signs/warning/warn_stop_sign_ahead.png",
+      "name": "Stop Sign Ahead",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "A stop sign at the intersection ahead may not be visible due to a curve or hill. Slow down and prepare to stop completely.",
+      "chapter": 2,
+      "tags": [
+        "stop sign",
+        "warning"
+      ],
+      "mutcd_code": "W3-1a"
+    },
+    {
+      "id": "warn_bicycle_crossing",
+      "file": "signs/warning/warn_bicycle_crossing.png",
+      "name": "Bicycle Crossing Ahead",
+      "shape": "Diamond",
+      "color": "Yellow or fluorescent yellow-green",
+      "meaning": "Bicyclists may be crossing your path ahead. Be prepared to slow down if necessary and give cyclists at least 4 feet of clearance.",
+      "chapter": 2,
+      "tags": [
+        "bicycle",
+        "crossing",
+        "warning"
+      ],
+      "mutcd_code": "W11-15"
+    },
+    {
+      "id": "warn_railroad_crossing_ahead",
+      "file": "signs/warning/warn_railroad_crossing_ahead.png",
+      "name": "Railroad Crossing Ahead",
+      "shape": "Circle",
+      "color": "Yellow and black",
+      "meaning": "A railroad crossing is ahead \u2014 the only circular warning sign. Begin looking and listening for a train. Be prepared to stop.",
+      "chapter": 2,
+      "tags": [
+        "railroad",
+        "train",
+        "crossing",
+        "warning"
+      ],
+      "mutcd_code": "W10-1"
+    },
+    {
+      "id": "warn_advanced_rr_intersection",
+      "file": "signs/warning/warn_advanced_rr_intersection.png",
+      "name": "Advanced Intersection / Railroad Crossing",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "The intersecting road has a railroad crossing very close to this intersection. If planning to turn and a train is approaching, be prepared to stop.",
+      "chapter": 2,
+      "tags": [
+        "railroad",
+        "intersection",
+        "advanced warning",
+        "warning"
+      ],
+      "mutcd_code": "W10-8"
+    },
+    {
+      "id": "warn_share_road_bike",
+      "file": "signs/warning/warn_share_road_bike.png",
+      "name": "Share the Road \u2014 Bicycle/Motor Vehicle",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "Used at roadway pinch points (no shoulder, narrow lanes) to warn motorists to provide adequate space for bicyclists sharing the road.",
+      "chapter": 2,
+      "tags": [
+        "share the road",
+        "bicycle",
+        "motorcycle",
+        "warning"
+      ],
+      "mutcd_code": "W16-9P"
+    },
+    {
+      "id": "warn_pedestrian_crossing",
+      "file": "signs/warning/warn_pedestrian_crossing.png",
+      "name": "Pedestrian Crossing",
+      "shape": "Diamond",
+      "color": "Yellow or fluorescent yellow-green",
+      "meaning": "Used at or before locations where pedestrians may cross. Be prepared to slow down or stop. Yield to all pedestrians in or entering the crosswalk.",
+      "chapter": 2,
+      "tags": [
+        "pedestrian",
+        "crossing",
+        "warning"
+      ],
+      "mutcd_code": "W11-2"
+    },
+    {
+      "id": "warn_school_zone",
+      "file": "signs/warning/warn_school_zone.png",
+      "name": "School Zone / School Crossing",
+      "shape": "Pentagon (5 sides)",
+      "color": "Yellow or fluorescent yellow-green",
+      "meaning": "The only pentagon-shaped sign on roadways. Approaching a school zone. Slow to 15 mph when children are present or when flashing lights are active.",
+      "chapter": 2,
+      "tags": [
+        "school",
+        "school zone",
+        "pentagon",
+        "children",
+        "warning"
+      ],
+      "mutcd_code": "S1-1"
+    },
+    {
+      "id": "warn_horse_drawn_vehicle",
+      "file": "signs/warning/warn_horse_drawn_vehicle.png",
+      "name": "Horse-Drawn Vehicle",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "Slow-moving horse-drawn vehicles (such as Amish buggies) cross or share the roadway in this area. Slow down and give them plenty of space.",
+      "chapter": 2,
+      "tags": [
+        "horse",
+        "buggy",
+        "slow vehicle",
+        "warning"
+      ],
+      "mutcd_code": "W11-14"
+    },
+    {
+      "id": "warn_set_sharp_turns_right",
+      "file": "signs/warning/warn_set_sharp_turns_right.png",
+      "name": "Set of Sharp Turns \u2014 First Right",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "A set of two sharp turns is ahead, the first bending sharply to the right and the second to the left. Slow down substantially before reaching the first turn.",
+      "chapter": 2,
+      "tags": [
+        "sharp turns",
+        "curves",
+        "warning"
+      ],
+      "mutcd_code": "W1-3R"
+    },
+    {
+      "id": "warn_set_sharp_turns_left",
+      "file": "signs/warning/warn_set_sharp_turns_left.png",
+      "name": "Set of Sharp Turns \u2014 First Left",
+      "shape": "Diamond",
+      "color": "Yellow and black",
+      "meaning": "A set of two sharp turns is ahead, the first bending sharply to the left and the second to the right. Slow down substantially before reaching the first turn.",
+      "chapter": 2,
+      "tags": [
+        "sharp turns",
+        "curves",
+        "warning"
+      ],
+      "mutcd_code": "W1-3L"
+    }
+  ],
+  "work_zone_signs": [
+    {
+      "id": "wz_work_zone_headlights",
+      "file": "signs/work_zone/wz_work_zone_headlights.png",
+      "name": "Work Zone \u2014 Turn On Headlights",
+      "shape": "Rectangle",
+      "color": "Orange and black",
+      "meaning": "PA state law requires headlights on at all times in posted work zones. Failure to comply results in an additional $25 fine.",
+      "chapter": 2,
+      "tags": [
+        "work zone",
+        "headlights",
+        "law"
+      ],
+      "mutcd_code": "G20-6a"
+    },
+    {
+      "id": "wz_active_work_zone_flashing",
+      "file": "signs/work_zone/wz_active_work_zone_flashing.png",
+      "name": "Active Work Zone \u2014 When Flashing",
+      "shape": "Rectangle",
+      "color": "Orange and black",
+      "meaning": "An active work zone where construction, maintenance, or utility workers are on or near the roadway. Increased fines apply.",
+      "chapter": 2,
+      "tags": [
+        "work zone",
+        "active",
+        "construction"
+      ],
+      "mutcd_code": "G20-6"
+    },
+    {
+      "id": "wz_end_active_work_zone",
+      "file": "signs/work_zone/wz_end_active_work_zone.png",
+      "name": "End Active Work Zone",
+      "shape": "Rectangle",
+      "color": "Orange and black",
+      "meaning": "The active work zone has ended. Normal speed limits and fines resume beyond this sign.",
+      "chapter": 2,
+      "tags": [
+        "work zone",
+        "end",
+        "construction"
+      ],
+      "mutcd_code": "G20-7"
+    },
+    {
+      "id": "wz_road_work_ahead",
+      "file": "signs/work_zone/wz_road_work_ahead.png",
+      "name": "Road Work Ahead",
+      "shape": "Diamond",
+      "color": "Orange and black",
+      "meaning": "Road work is ahead. Slow down, be alert, and be prepared for changing traffic patterns, narrow lanes, and workers near the road.",
+      "chapter": 2,
+      "tags": [
+        "road work",
+        "construction",
+        "work zone"
+      ],
+      "mutcd_code": "W20-1"
+    },
+    {
+      "id": "wz_road_closed_flooding",
+      "file": "signs/work_zone/wz_road_closed_flooding.png",
+      "name": "Road Closed \u2014 Flooding",
+      "shape": "Rectangle",
+      "color": "Orange and black",
+      "meaning": "The road is closed due to flooding. Use an alternate route. Never attempt to drive through flooded roads \u2014 Turn Around Don't Drown.",
+      "chapter": 2,
+      "tags": [
+        "road closed",
+        "flooding",
+        "warning"
+      ],
+      "mutcd_code": "R11-4"
+    },
+    {
+      "id": "wz_right_lane_closed",
+      "file": "signs/work_zone/wz_right_lane_closed.png",
+      "name": "Right Lane Closed Ahead",
+      "shape": "Diamond",
+      "color": "Orange and black",
+      "meaning": "The right lane will be closed at a specified distance ahead. Merge into the open lane as soon as it is safe to do so.",
+      "chapter": 2,
+      "tags": [
+        "lane closed",
+        "merge",
+        "work zone"
+      ],
+      "mutcd_code": "W20-5R"
+    },
+    {
+      "id": "wz_workers_ahead",
+      "file": "signs/work_zone/wz_workers_ahead.png",
+      "name": "Workers Ahead",
+      "shape": "Diamond",
+      "color": "Orange and black",
+      "meaning": "Workers are on or very close to the roadway. Slow down and take special care. Highway workers can report unsafe drivers to police.",
+      "chapter": 2,
+      "tags": [
+        "workers",
+        "construction",
+        "work zone"
+      ],
+      "mutcd_code": "W21-1"
+    },
+    {
+      "id": "wz_flagger_ahead",
+      "file": "signs/work_zone/wz_flagger_ahead.png",
+      "name": "Flagger Ahead",
+      "shape": "Diamond",
+      "color": "Orange and black",
+      "meaning": "A flagger (flag person) is controlling traffic ahead. Follow flagger instructions \u2014 their authority overrides conventional traffic control devices.",
+      "chapter": 2,
+      "tags": [
+        "flagger",
+        "flag person",
+        "work zone"
+      ],
+      "mutcd_code": "W20-7a"
+    },
+    {
+      "id": "wz_flagger_stop",
+      "file": "signs/work_zone/wz_flagger_stop.png",
+      "name": "Flagger \u2014 Stop Paddle",
+      "shape": "Figure (scene)",
+      "color": "Red and white",
+      "meaning": "When a flagger displays the STOP paddle (or red flag), all traffic must stop and wait.",
+      "chapter": 2,
+      "tags": [
+        "flagger",
+        "stop",
+        "work zone"
+      ],
+      "mutcd_code": "TTC \u2014 Flagger (Stop paddle)"
+    },
+    {
+      "id": "wz_flagger_slow",
+      "file": "signs/work_zone/wz_flagger_slow.png",
+      "name": "Flagger \u2014 Slow Paddle",
+      "shape": "Figure (scene)",
+      "color": "Orange and black",
+      "meaning": "When a flagger displays the SLOW paddle, reduce speed and proceed carefully through the work zone.",
+      "chapter": 2,
+      "tags": [
+        "flagger",
+        "slow",
+        "work zone"
+      ],
+      "mutcd_code": "TTC \u2014 Flagger (Slow paddle)"
+    },
+    {
+      "id": "wz_arrow_panel_move_merge_right",
+      "file": "signs/work_zone/wz_arrow_panel_move_merge_right.png",
+      "name": "Electronic Arrow Panel \u2014 Move/Merge Right",
+      "shape": "Panel (electronic)",
+      "color": "Yellow on black",
+      "meaning": "Large electronic flashing arrow panel indicating drivers should move or merge to the right. Begin merge well in advance.",
+      "chapter": 2,
+      "tags": [
+        "arrow panel",
+        "merge right",
+        "work zone",
+        "electronic"
+      ],
+      "mutcd_code": "TTC \u2014 PCMS Arrow Panel (Right)"
+    },
+    {
+      "id": "wz_arrow_panel_move_merge_left",
+      "file": "signs/work_zone/wz_arrow_panel_move_merge_left.png",
+      "name": "Electronic Arrow Panel \u2014 Move/Merge Left",
+      "shape": "Panel (electronic)",
+      "color": "Yellow on black",
+      "meaning": "Electronic flashing arrow panel indicating drivers should move or merge to the left.",
+      "chapter": 2,
+      "tags": [
+        "arrow panel",
+        "merge left",
+        "work zone",
+        "electronic"
+      ],
+      "mutcd_code": "TTC \u2014 PCMS Arrow Panel (Left)"
+    },
+    {
+      "id": "wz_arrow_panel_caution",
+      "file": "signs/work_zone/wz_arrow_panel_caution.png",
+      "name": "Electronic Arrow Panel \u2014 Caution",
+      "shape": "Panel (electronic)",
+      "color": "Yellow on black",
+      "meaning": "A caution pattern on the arrow panel indicates a work area is adjacent to the travel lane. Drive with extra caution.",
+      "chapter": 2,
+      "tags": [
+        "arrow panel",
+        "caution",
+        "work zone",
+        "electronic"
+      ],
+      "mutcd_code": "TTC \u2014 PCMS Arrow Panel (Caution)"
+    },
+    {
+      "id": "wz_channeling_devices",
+      "file": "signs/work_zone/wz_channeling_devices.png",
+      "name": "Channeling Devices",
+      "shape": "Scene (multiple objects)",
+      "color": "Orange and white",
+      "meaning": "Barrels, tubes, cones, and vertical panels guide drivers through changing traffic patterns in work zones. Keep away from hazards and stay within the channeled lane.",
+      "chapter": 2,
+      "tags": [
+        "cones",
+        "barrels",
+        "channeling",
+        "work zone"
+      ],
+      "mutcd_code": "TTC \u2014 Channelizing Devices (cones/barrels/panels)"
+    }
+  ],
+  "guide_signs": [
+    {
+      "id": "guide_highway_2mile",
+      "file": "signs/guide/guide_highway_2mile.png",
+      "name": "Highway Exit Sign \u2014 2 Miles",
+      "shape": "Rectangle (horizontal)",
+      "color": "Green and white",
+      "meaning": "Highway/expressway guide sign indicating an exit is 2 miles ahead. The first of three advance signs posted on highways.",
+      "chapter": 2,
+      "tags": [
+        "highway",
+        "exit",
+        "guide",
+        "expressway"
+      ],
+      "mutcd_code": "M4-1 (2 Mile)"
+    },
+    {
+      "id": "guide_highway_1mile",
+      "file": "signs/guide/guide_highway_1mile.png",
+      "name": "Highway Exit Sign \u2014 1 Mile",
+      "shape": "Rectangle (horizontal)",
+      "color": "Green and white",
+      "meaning": "Second advance highway exit sign \u2014 exit is 1 mile ahead. Begin moving toward the correct lane.",
+      "chapter": 2,
+      "tags": [
+        "highway",
+        "exit",
+        "guide",
+        "expressway"
+      ],
+      "mutcd_code": "M4-1 (1 Mile)"
+    },
+    {
+      "id": "guide_highway_exit",
+      "file": "signs/guide/guide_highway_exit.png",
+      "name": "Highway Exit Sign \u2014 At Exit",
+      "shape": "Rectangle (horizontal)",
+      "color": "Green and white",
+      "meaning": "The exit ramp is here. Move to the exit lane. Do not cross solid white lines to reach the exit.",
+      "chapter": 2,
+      "tags": [
+        "highway",
+        "exit",
+        "guide",
+        "expressway"
+      ],
+      "mutcd_code": "M6-1"
+    },
+    {
+      "id": "guide_exit_only_left",
+      "file": "signs/guide/guide_exit_only_left.png",
+      "name": "Exit Only (Left side)",
+      "shape": "Rectangle (horizontal)",
+      "color": "Green and yellow",
+      "meaning": "Your lane exits the highway. You must exit if you stay in this lane. Change lanes now if you want to continue on the highway.",
+      "chapter": 2,
+      "tags": [
+        "exit only",
+        "highway",
+        "guide"
+      ],
+      "mutcd_code": "M4-4L"
+    },
+    {
+      "id": "guide_exit_only_right",
+      "file": "signs/guide/guide_exit_only_right.png",
+      "name": "Exit Only (Right side)",
+      "shape": "Rectangle (horizontal)",
+      "color": "Green and yellow",
+      "meaning": "This lane exits the highway on the right side. Must exit if staying in lane.",
+      "chapter": 2,
+      "tags": [
+        "exit only",
+        "highway",
+        "guide"
+      ],
+      "mutcd_code": "M4-4R"
+    },
+    {
+      "id": "guide_interstate_shield",
+      "file": "signs/guide/guide_interstate_shield.png",
+      "name": "Interstate Shield",
+      "shape": "Shield",
+      "color": "Red, white, and blue",
+      "meaning": "Indicates the highway is an interstate. Even-numbered interstates run east-west; odd-numbered run north-south. Three-digit interstates are connectors.",
+      "chapter": 2,
+      "tags": [
+        "interstate",
+        "highway",
+        "route",
+        "guide"
+      ],
+      "mutcd_code": "M1-1"
+    },
+    {
+      "id": "guide_us_route_marker",
+      "file": "signs/guide/guide_us_route_marker.png",
+      "name": "U.S. Route Marker",
+      "shape": "Shield",
+      "color": "Black and white",
+      "meaning": "Indicates you are traveling on a U.S. Traffic Route. The number identifies the specific route.",
+      "chapter": 2,
+      "tags": [
+        "route",
+        "US route",
+        "guide"
+      ],
+      "mutcd_code": "M1-3"
+    },
+    {
+      "id": "guide_pa_keystone_marker",
+      "file": "signs/guide/guide_pa_keystone_marker.png",
+      "name": "Pennsylvania Keystone Route Marker",
+      "shape": "Keystone",
+      "color": "Blue and white",
+      "meaning": "Pennsylvania's unique keystone-shaped marker indicating a Pennsylvania State Traffic Route.",
+      "chapter": 2,
+      "tags": [
+        "route",
+        "Pennsylvania",
+        "keystone",
+        "guide"
+      ],
+      "mutcd_code": "M1-6 (PA State Keystone)"
+    },
+    {
+      "id": "guide_route_jct",
+      "file": "signs/guide/guide_route_jct.png",
+      "name": "Route Junction Plate",
+      "shape": "Rectangle + Shield",
+      "color": "Black and white",
+      "meaning": "Junction plate on a route marker showing you are approaching the intersection with the indicated route.",
+      "chapter": 2,
+      "tags": [
+        "junction",
+        "route",
+        "guide"
+      ],
+      "mutcd_code": "M2-3P (Junction Plate)"
+    },
+    {
+      "id": "guide_route_direction",
+      "file": "signs/guide/guide_route_direction.png",
+      "name": "Route Direction Plate",
+      "shape": "Rectangle + Shield",
+      "color": "Black and white",
+      "meaning": "Direction plate on a route marker showing the cardinal direction (WEST/EAST/NORTH/SOUTH) you are traveling on the route.",
+      "chapter": 2,
+      "tags": [
+        "direction",
+        "route",
+        "guide"
+      ],
+      "mutcd_code": "M3-1P (Direction Plate)"
+    },
+    {
+      "id": "guide_mile_markers",
+      "file": "signs/guide/guide_mile_markers.png",
+      "name": "Mile Markers",
+      "shape": "Rectangle",
+      "color": "Green and white",
+      "meaning": "Indicate the number of miles from the point where the traffic route entered the state or its beginning. Numbers increase east or north. Help pinpoint location for roadside assistance.",
+      "chapter": 2,
+      "tags": [
+        "mile marker",
+        "distance",
+        "location",
+        "guide"
+      ],
+      "mutcd_code": "M1-10"
+    },
+    {
+      "id": "guide_route_supp_arrow",
+      "file": "signs/guide/guide_route_supp_arrow.png",
+      "name": "Route Supplemental Arrow",
+      "shape": "Rectangle + Shield assembly",
+      "color": "Black and white",
+      "meaning": "A supplemental arrow below a route marker assembly shows which direction to turn to continue on the indicated route. Here it means a turn is required to remain on the route.",
+      "chapter": 2,
+      "tags": [
+        "route",
+        "supplemental",
+        "arrow",
+        "guide"
+      ],
+      "mutcd_code": "M5-1"
+    },
+    {
+      "id": "guide_route_supp_arrow_to",
+      "file": "signs/guide/guide_route_supp_arrow_to.png",
+      "name": "Route Supplemental Arrow \u2014 TO",
+      "shape": "Rectangle + Shield assembly",
+      "color": "Black and white",
+      "meaning": "A TO plate combined with a route marker and supplemental arrow means the indicated route is accessible by continuing ahead \u2014 you do not need to turn. The TO plate distinguishes access from continuation.",
+      "chapter": 2,
+      "tags": [
+        "route",
+        "supplemental",
+        "to",
+        "arrow",
+        "guide"
+      ],
+      "mutcd_code": "M4-6"
+    }
+  ],
+  "service_signs": [
+    {
+      "id": "svc_hospital",
+      "file": "signs/service/svc_hospital.png",
+      "name": "Hospital",
+      "shape": "Square",
+      "color": "Blue and white",
+      "meaning": "A hospital is located at the next exit or nearby. Follow H signs to reach emergency medical services.",
+      "chapter": 2,
+      "tags": [
+        "hospital",
+        "medical",
+        "emergency",
+        "service"
+      ],
+      "mutcd_code": "I-1 (Hospital)"
+    },
+    {
+      "id": "svc_telephone",
+      "file": "signs/service/svc_telephone.png",
+      "name": "Telephone",
+      "shape": "Square",
+      "color": "Blue and white",
+      "meaning": "A public telephone is available at the next exit or nearby location.",
+      "chapter": 2,
+      "tags": [
+        "telephone",
+        "communication",
+        "service"
+      ],
+      "mutcd_code": "I-1 (Telephone)"
+    },
+    {
+      "id": "svc_food",
+      "file": "signs/service/svc_food.png",
+      "name": "Food",
+      "shape": "Square",
+      "color": "Blue and white",
+      "meaning": "Food service (restaurant, fast food) is available at the next exit.",
+      "chapter": 2,
+      "tags": [
+        "food",
+        "restaurant",
+        "service"
+      ],
+      "mutcd_code": "I-1 (Food)"
+    },
+    {
+      "id": "svc_gas",
+      "file": "signs/service/svc_gas.png",
+      "name": "Gas",
+      "shape": "Square",
+      "color": "Blue and white",
+      "meaning": "A gasoline service station is available at the next exit.",
+      "chapter": 2,
+      "tags": [
+        "gas",
+        "fuel",
+        "service station",
+        "service"
+      ],
+      "mutcd_code": "I-1 (Gas)"
+    },
+    {
+      "id": "svc_diesel",
+      "file": "signs/service/svc_diesel.png",
+      "name": "Diesel",
+      "shape": "Square",
+      "color": "Blue and white",
+      "meaning": "Diesel fuel is available at the next exit. Important for truck drivers and diesel vehicle operators.",
+      "chapter": 2,
+      "tags": [
+        "diesel",
+        "fuel",
+        "truck",
+        "service"
+      ],
+      "mutcd_code": "I-1 (Diesel)"
+    },
+    {
+      "id": "svc_lodging",
+      "file": "signs/service/svc_lodging.png",
+      "name": "Lodging",
+      "shape": "Square",
+      "color": "Blue and white",
+      "meaning": "Hotel, motel, or other overnight lodging is available at the next exit.",
+      "chapter": 2,
+      "tags": [
+        "lodging",
+        "hotel",
+        "motel",
+        "service"
+      ],
+      "mutcd_code": "I-1 (Lodging)"
+    },
+    {
+      "id": "svc_tourist_blue",
+      "file": "signs/service/svc_tourist_blue.png",
+      "name": "Tourist-Oriented Directional Sign (Blue)",
+      "shape": "Rectangle",
+      "color": "Blue and white",
+      "meaning": "Directs motorists to tourist attractions such as museums, historical landmarks, or cultural sites. Blue indicates general tourist services.",
+      "chapter": 2,
+      "tags": [
+        "tourist",
+        "attraction",
+        "museum",
+        "service"
+      ],
+      "mutcd_code": "D9-6"
+    },
+    {
+      "id": "svc_tourist_brown",
+      "file": "signs/service/svc_tourist_brown.png",
+      "name": "Tourist-Oriented Directional Sign (Brown)",
+      "shape": "Rectangle",
+      "color": "Brown and white",
+      "meaning": "Directs motorists to recreational areas, state or national parks, and historical landmarks. Brown indicates public recreation and cultural interest sites.",
+      "chapter": 2,
+      "tags": [
+        "tourist",
+        "park",
+        "recreation",
+        "historical",
+        "service"
+      ],
+      "mutcd_code": "D9-7"
+    }
+  ],
+  "traffic_signals": [
+    {
+      "id": "sig_traffic_light_layout",
+      "file": "signs/signals/sig_traffic_light_layout.png",
+      "name": "Traffic Light \u2014 Vertical and Horizontal Layout",
+      "meaning": "Traffic signals are arranged vertically (red on top, green on bottom) or horizontally (red on left, green on right).",
+      "chapter": 2,
+      "tags": [
+        "traffic light",
+        "signal",
+        "layout"
+      ],
+      "mutcd_code": "MUTCD 4D.01 \u2014 Signal Face Layout"
+    },
+    {
+      "id": "sig_red_light",
+      "file": "signs/signals/sig_red_light.png",
+      "name": "Steady Red Light",
+      "meaning": "Stop completely before the stop line or crosswalk. Wait for a green light. Right turn on red is allowed after a full stop (unless prohibited). Left turn on red only from a one-way street onto another one-way street.",
+      "chapter": 2,
+      "tags": [
+        "red light",
+        "stop",
+        "signal"
+      ],
+      "mutcd_code": "MUTCD 4D.04 \u2014 Circular Red"
+    },
+    {
+      "id": "sig_yellow_light",
+      "file": "signs/signals/sig_yellow_light.png",
+      "name": "Steady Yellow Light",
+      "meaning": "A red light is about to appear. Slow down and prepare to stop. If within the intersection or unable to stop safely, continue through carefully.",
+      "chapter": 2,
+      "tags": [
+        "yellow light",
+        "caution",
+        "signal"
+      ],
+      "mutcd_code": "MUTCD 4D.04 \u2014 Circular Yellow"
+    },
+    {
+      "id": "sig_green_light",
+      "file": "signs/signals/sig_green_light.png",
+      "name": "Steady Green Light",
+      "meaning": "You may proceed through the intersection if the road is clear. You may turn right or left unless a sign prohibits it \u2014 yield to pedestrians and oncoming traffic when turning.",
+      "chapter": 2,
+      "tags": [
+        "green light",
+        "proceed",
+        "signal"
+      ],
+      "mutcd_code": "MUTCD 4D.04 \u2014 Circular Green"
+    },
+    {
+      "id": "sig_red_arrow",
+      "file": "signs/signals/sig_red_arrow.png",
+      "name": "Steady Red Arrow",
+      "meaning": "Stop. You may not turn in the direction the arrow points. Wait for a green arrow or flashing yellow arrow before proceeding.",
+      "chapter": 2,
+      "tags": [
+        "red arrow",
+        "stop",
+        "turn",
+        "signal"
+      ],
+      "mutcd_code": "MUTCD 4D.05 \u2014 Red Arrow"
+    },
+    {
+      "id": "sig_yellow_arrow",
+      "file": "signs/signals/sig_yellow_arrow.png",
+      "name": "Steady Yellow Arrow",
+      "meaning": "The green or flashing yellow arrow phase is ending and will turn red. Slow down and prepare to stop completely.",
+      "chapter": 2,
+      "tags": [
+        "yellow arrow",
+        "caution",
+        "turn",
+        "signal"
+      ],
+      "mutcd_code": "MUTCD 4D.05 \u2014 Yellow Arrow"
+    },
+    {
+      "id": "sig_green_arrow",
+      "file": "signs/signals/sig_green_arrow.png",
+      "name": "Steady Green Arrow",
+      "meaning": "You may turn in the direction the arrow points. Your turn is protected \u2014 oncoming traffic is stopped by a red light. If the arrow turns to a green light, you may still turn but must yield.",
+      "chapter": 2,
+      "tags": [
+        "green arrow",
+        "protected turn",
+        "signal"
+      ],
+      "mutcd_code": "MUTCD 4D.05 \u2014 Green Arrow"
+    },
+    {
+      "id": "sig_flashing_red",
+      "file": "signs/signals/sig_flashing_red.png",
+      "name": "Flashing Red Light",
+      "meaning": "Treat as a STOP sign. Come to a complete stop, check for traffic and pedestrians, and proceed when it is safe.",
+      "chapter": 2,
+      "tags": [
+        "flashing red",
+        "stop",
+        "signal"
+      ],
+      "mutcd_code": "MUTCD 4D.04 \u2014 Flashing Red"
+    },
+    {
+      "id": "sig_flashing_yellow",
+      "file": "signs/signals/sig_flashing_yellow.png",
+      "name": "Flashing Yellow Light",
+      "meaning": "Caution. Slow down, look, and proceed carefully. You do not need to stop.",
+      "chapter": 2,
+      "tags": [
+        "flashing yellow",
+        "caution",
+        "signal"
+      ],
+      "mutcd_code": "MUTCD 4D.04 \u2014 Flashing Yellow"
+    },
+    {
+      "id": "sig_flashing_yellow_arrow",
+      "file": "signs/signals/sig_flashing_yellow_arrow.png",
+      "name": "Flashing Yellow Arrow",
+      "meaning": "You may turn in the direction of the arrow but must yield to oncoming traffic and pedestrians. Your turn is NOT protected \u2014 oncoming traffic has a green light.",
+      "chapter": 2,
+      "tags": [
+        "flashing yellow arrow",
+        "unprotected turn",
+        "yield",
+        "signal"
+      ],
+      "mutcd_code": "MUTCD 4D.25 \u2014 Flashing Yellow Arrow"
+    },
+    {
+      "id": "sig_lane_green_arrow_down",
+      "file": "signs/signals/sig_lane_green_arrow_down.png",
+      "name": "Lane Use Signal \u2014 Green Arrow Down",
+      "meaning": "A steady downward green arrow over a traffic lane means you may use that lane.",
+      "chapter": 2,
+      "tags": [
+        "lane signal",
+        "green arrow",
+        "use lane"
+      ],
+      "mutcd_code": "MUTCD 4L.01 \u2014 Lane Control Green Arrow"
+    },
+    {
+      "id": "sig_lane_yellow_x",
+      "file": "signs/signals/sig_lane_yellow_x.png",
+      "name": "Lane Use Signal \u2014 Yellow X",
+      "meaning": "A steady yellow X means the direction of travel in this lane is about to reverse. Change lanes safely and immediately.",
+      "chapter": 2,
+      "tags": [
+        "lane signal",
+        "yellow x",
+        "reversible lane"
+      ],
+      "mutcd_code": "MUTCD 4L.01 \u2014 Lane Control Yellow X"
+    },
+    {
+      "id": "sig_lane_red_x",
+      "file": "signs/signals/sig_lane_red_x.png",
+      "name": "Lane Use Signal \u2014 Red X",
+      "meaning": "A steady red X means you are not allowed to use this traffic lane.",
+      "chapter": 2,
+      "tags": [
+        "lane signal",
+        "red x",
+        "closed lane"
+      ],
+      "mutcd_code": "MUTCD 4L.01 \u2014 Lane Control Red X"
+    },
+    {
+      "id": "sig_lane_left_turn_one_way",
+      "file": "signs/signals/sig_lane_left_turn_one_way.png",
+      "name": "Lane Use Signal \u2014 One-Way Left Turn Arrow",
+      "meaning": "A white one-way left-turn arrow over a lane means you may only turn left from that lane.",
+      "chapter": 2,
+      "tags": [
+        "lane signal",
+        "left turn",
+        "one-way"
+      ],
+      "mutcd_code": "MUTCD 4L.01 \u2014 Lane Control One-Way Left Arrow"
+    },
+    {
+      "id": "sig_lane_left_turn_two_way",
+      "file": "signs/signals/sig_lane_left_turn_two_way.png",
+      "name": "Lane Use Signal \u2014 Two-Way Left Turn Arrow",
+      "meaning": "A white two-way left-turn arrow means you may only turn left, but the lane is shared with left-turning drivers from the opposite direction.",
+      "chapter": 2,
+      "tags": [
+        "lane signal",
+        "left turn",
+        "two-way",
+        "shared"
+      ],
+      "mutcd_code": "MUTCD 4L.01 \u2014 Lane Control Two-Way Left Arrow"
+    },
+    {
+      "id": "sig_walk",
+      "file": "signs/signals/sig_walk.png",
+      "name": "Pedestrian Signal \u2014 WALK",
+      "meaning": "When the WALK signal or walking person symbol appears, pedestrians may start crossing. Remain alert for turning vehicles.",
+      "chapter": 2,
+      "tags": [
+        "pedestrian",
+        "walk",
+        "signal",
+        "crosswalk"
+      ],
+      "mutcd_code": "MUTCD 4E.02 \u2014 WALK Signal"
+    },
+    {
+      "id": "sig_walk_person",
+      "file": "signs/signals/sig_walk_person.png",
+      "name": "Pedestrian Signal \u2014 Walking Person",
+      "meaning": "The illuminated walking person symbol indicates pedestrians may cross. Same meaning as WALK.",
+      "chapter": 2,
+      "tags": [
+        "pedestrian",
+        "walk",
+        "signal",
+        "crosswalk"
+      ],
+      "mutcd_code": "MUTCD 4E.02 \u2014 Walking Person Symbol"
+    },
+    {
+      "id": "sig_dont_walk_flashing",
+      "file": "signs/signals/sig_dont_walk_flashing.png",
+      "name": "Pedestrian Signal \u2014 Flashing DON'T WALK",
+      "meaning": "If you have started crossing, finish crossing. If you have not left the curb, do not start. The signal is about to turn to a solid DON'T WALK.",
+      "chapter": 2,
+      "tags": [
+        "pedestrian",
+        "don't walk",
+        "flashing",
+        "signal"
+      ],
+      "mutcd_code": "MUTCD 4E.02 \u2014 Flashing Don't Walk / Hand"
+    },
+    {
+      "id": "sig_dont_walk_steady",
+      "file": "signs/signals/sig_dont_walk_steady.png",
+      "name": "Pedestrian Signal \u2014 Steady DON'T WALK",
+      "meaning": "Do not cross. Pedestrians who have not yet left the curb must wait for the next WALK signal.",
+      "chapter": 2,
+      "tags": [
+        "pedestrian",
+        "don't walk",
+        "steady",
+        "signal"
+      ],
+      "mutcd_code": "MUTCD 4E.02 \u2014 Steady Don't Walk / Hand"
+    },
+    {
+      "id": "sig_school_zone_speed",
+      "file": "signs/signals/sig_school_zone_speed.png",
+      "name": "School Zone Speed Limit Signal",
+      "meaning": "Flashing yellow lights on school zone speed signs indicate the 15 mph speed limit is in effect. Exceeding this speed results in 3 points and a fine.",
+      "chapter": 2,
+      "tags": [
+        "school zone",
+        "speed limit",
+        "15 mph",
+        "signal"
+      ],
+      "mutcd_code": "S4-3 + R2-1 (Flashing School Speed Limit)"
+    },
+    {
+      "id": "sig_railroad_crossing_gate",
+      "file": "signs/signals/sig_railroad_crossing_gate.png",
+      "name": "Railroad Crossing \u2014 Gate and Signals",
+      "meaning": "When gates lower and red lights flash, ALL traffic must stop. Do not go around gates. Wait until all signals stop and gates fully rise before proceeding.",
+      "chapter": 2,
+      "tags": [
+        "railroad",
+        "crossing gate",
+        "signal",
+        "train"
+      ],
+      "mutcd_code": "MUTCD 8C.04 \u2014 Gate + Flashing Red Signal"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "scene_parallel_parking_steps",
+      "file": "scenes/scene_parallel_parking_steps.png",
+      "name": "Parallel Parking \u2014 5-Step Method",
+      "meaning": "1. Stop even with vehicle ahead, 2 feet away. 2. Turn wheel right, back slowly toward vehicle behind. 3. As front door passes back bumper, straighten wheels. 4. When clear of vehicle ahead, turn wheels sharply left and back to vehicle behind. 5. Turn wheels right and pull to center of space.",
+      "chapter": 3,
+      "tags": [
+        "parallel parking",
+        "parking",
+        "maneuver",
+        "scene"
+      ],
+      "mutcd_code": "N/A \u2014 Instructional Diagram"
+    },
+    {
+      "id": "scene_school_bus_stopping",
+      "file": "scenes/scene_school_bus_stopping.png",
+      "name": "School Bus Stopping Law",
+      "meaning": "All vehicles must stop at least 10 feet from a stopped school bus displaying flashing red lights and extended stop arm. Exception: divided highway with concrete/metal barrier \u2014 opposite direction traffic may proceed with caution.",
+      "chapter": 3,
+      "tags": [
+        "school bus",
+        "stopping law",
+        "10 feet",
+        "scene"
+      ],
+      "mutcd_code": "N/A \u2014 Instructional Diagram"
+    },
+    {
+      "id": "scene_truck_no_zones",
+      "file": "scenes/scene_truck_no_zones.png",
+      "name": "Truck No-Zone Blind Spots",
+      "meaning": "Trucks have large blind spots on all four sides called No-Zones: front (20 feet), rear (30 feet), and both sides. If you cannot see the truck's mirrors, the driver cannot see you. Avoid lingering in No-Zones.",
+      "chapter": 3,
+      "tags": [
+        "truck",
+        "blind spot",
+        "no-zone",
+        "safety",
+        "scene"
+      ],
+      "mutcd_code": "N/A \u2014 Instructional Diagram"
+    },
+    {
+      "id": "scene_truck_wide_right_turn",
+      "file": "scenes/scene_truck_wide_right_turn.png",
+      "name": "Truck Wide Right Turn",
+      "meaning": "Trucks must make wide right turns and may swing left before turning right. Never squeeze between a turning truck and the curb. Wait for the truck to complete its turn before proceeding.",
+      "chapter": 3,
+      "tags": [
+        "truck",
+        "wide turn",
+        "right turn",
+        "scene"
+      ],
+      "mutcd_code": "N/A \u2014 Instructional Diagram"
+    },
+    {
+      "id": "scene_split_difference",
+      "file": "scenes/scene_split_difference.png",
+      "name": "Splitting the Difference",
+      "meaning": "When parked vehicles are on your right and oncoming vehicles are on your left, slow down and steer a middle course \u2014 splitting the difference \u2014 to maintain safe clearance on both sides.",
+      "chapter": 3,
+      "tags": [
+        "space management",
+        "passing",
+        "parked vehicles",
+        "scene"
+      ],
+      "mutcd_code": "N/A \u2014 Instructional Diagram"
+    },
+    {
+      "id": "scene_obj_adj_right",
+      "file": "scenes/scene_obj_adj_right.png",
+      "name": "Objects Adjacent \u2014 Right Hazard (Keep Left)",
+      "meaning": "A hazard marker object is on the right side of the road. Chevron stripes angle downward-left, indicating you must keep to the left to avoid the obstacle.",
+      "chapter": 2,
+      "tags": [
+        "object marker",
+        "hazard",
+        "right side",
+        "scene"
+      ],
+      "mutcd_code": "OM1-1"
+    },
+    {
+      "id": "scene_obj_adj_left",
+      "file": "scenes/scene_obj_adj_left.png",
+      "name": "Objects Adjacent \u2014 Left Hazard (Keep Right)",
+      "meaning": "A hazard marker object is on the left side of the road. Chevron stripes angle downward-right, indicating you must keep to the right to avoid the obstacle.",
+      "chapter": 2,
+      "tags": [
+        "object marker",
+        "hazard",
+        "left side",
+        "scene"
+      ],
+      "mutcd_code": "OM1-3"
+    },
+    {
+      "id": "scene_obj_adj_center",
+      "file": "scenes/scene_obj_adj_center.png",
+      "name": "Objects Adjacent \u2014 Center Hazard (Keep Left or Right)",
+      "meaning": "A hazard marker is centered in or near the road. Chevron stripes alternate direction, indicating you must pass either to the left or right of the obstacle.",
+      "chapter": 2,
+      "tags": [
+        "object marker",
+        "hazard",
+        "center",
+        "scene"
+      ],
+      "mutcd_code": "OM1-2"
+    }
+  ],
+  "diagrams": [
+    {
+      "id": "diag_hill_parking",
+      "file": "diagrams/diag_hill_parking.png",
+      "name": "How to Park on a Hill",
+      "meaning": "PARKING DOWNHILL with a curb: Turn wheels RIGHT (toward curb). PARKING UPHILL with a curb: Turn wheels LEFT (away from curb). DOWNHILL or UPHILL without a curb: Turn wheels RIGHT (toward road edge). Always set parking brake.",
+      "chapter": 3,
+      "tags": [
+        "hill parking",
+        "wheels",
+        "curb",
+        "parking",
+        "diagram"
+      ],
+      "mutcd_code": "N/A \u2014 Instructional Diagram"
+    },
+    {
+      "id": "diag_space_cushion_zones",
+      "file": "diagrams/diag_space_cushion_zones.png",
+      "name": "Space Management \u2014 6-Zone Cushion",
+      "meaning": "The six zones of space management around your vehicle: Zone 1 (front), Zone 2 (front-right), Zone 3 (rear-right), Zone 4 (front-left), Zone 5 (rear-left), Zone 6 (rear). Maintain space in all zones as your escape paths.",
+      "chapter": 3,
+      "tags": [
+        "space cushion",
+        "zones",
+        "defensive driving",
+        "diagram"
+      ],
+      "mutcd_code": "N/A \u2014 Instructional Diagram"
+    },
+    {
+      "id": "diag_roundabout",
+      "file": "diagrams/diag_roundabout.png",
+      "name": "Roundabout / Circular Intersection",
+      "meaning": "Approaching: slow down, yield to pedestrians at crosswalk, then yield to circulating traffic. Enter when gap exists. Travel counterclockwise. Signal right when exiting. Never stop in the roundabout \u2014 pull to the side if an emergency vehicle approaches.",
+      "chapter": 3,
+      "tags": [
+        "roundabout",
+        "circular intersection",
+        "yield",
+        "diagram"
+      ],
+      "mutcd_code": "N/A \u2014 Instructional Diagram"
+    },
+    {
+      "id": "diag_jughandle",
+      "file": "diagrams/diag_jughandle.png",
+      "name": "Jughandle Intersection",
+      "meaning": "Some commercial areas use jughandles (jug-handle turns) where a right turn lane curves back to allow left turns. Signs will indicate ALL TURNS FROM RIGHT LANE. Turn right, then use the signal light to turn left onto the main road.",
+      "chapter": 3,
+      "tags": [
+        "jughandle",
+        "left turn",
+        "intersection",
+        "diagram"
+      ],
+      "mutcd_code": "N/A \u2014 Instructional Diagram"
+    },
+    {
+      "id": "diag_left_turn_x_intersection",
+      "file": "diagrams/diag_left_turn_x_intersection.png",
+      "name": "Left Turn \u2014 X at Intersection Center",
+      "meaning": "To avoid a tangle turn (colliding with an oncoming left-turner), imagine an X at the center of the intersection. Begin your left turn BEFORE reaching the X center so you turn into the closest lane. Never change lanes mid-turn.",
+      "chapter": 3,
+      "tags": [
+        "left turn",
+        "tangle turn",
+        "intersection",
+        "diagram"
+      ],
+      "mutcd_code": "N/A \u2014 Instructional Diagram"
+    },
+    {
+      "id": "diag_intersection_lanes_a",
+      "file": "diagrams/diag_intersection_lanes_a.png",
+      "name": "Intersection Lane Assignment \u2014 Dual Left Turns",
+      "meaning": "Dual left-turn lanes: both lanes turn left simultaneously. Stay in your lane throughout the turn \u2014 do not change lanes mid-turn. Watch for drivers in the adjacent lane straying into yours.",
+      "chapter": 3,
+      "tags": [
+        "intersection",
+        "dual left turn",
+        "lanes",
+        "diagram"
+      ],
+      "mutcd_code": "N/A \u2014 Instructional Diagram"
+    },
+    {
+      "id": "diag_intersection_lanes_b",
+      "file": "diagrams/diag_intersection_lanes_b.png",
+      "name": "Intersection Lane Assignment \u2014 Single Lane Turns",
+      "meaning": "Turn only from the lane designated for that movement. If in a right-turn-only lane, you must turn right even if you wanted to go straight.",
+      "chapter": 3,
+      "tags": [
+        "intersection",
+        "lane assignment",
+        "turning",
+        "diagram"
+      ],
+      "mutcd_code": "N/A \u2014 Instructional Diagram"
+    },
+    {
+      "id": "diag_curve_left_bending",
+      "file": "diagrams/diag_curve_left_bending.png",
+      "name": "Physics of Speeding \u2014 Left-Bending Curve",
+      "meaning": "On a left-bending curve, a speeding vehicle's inertia carries it off the road to the right (off the shoulder). Slow down BEFORE entering any curve \u2014 you cannot brake effectively once in the curve.",
+      "chapter": 3,
+      "tags": [
+        "curve",
+        "physics",
+        "inertia",
+        "speeding",
+        "diagram"
+      ],
+      "mutcd_code": "N/A \u2014 Instructional Diagram"
+    },
+    {
+      "id": "diag_curve_right_bending",
+      "file": "diagrams/diag_curve_right_bending.png",
+      "name": "Physics of Speeding \u2014 Right-Bending Curve",
+      "meaning": "On a right-bending curve, a speeding vehicle's inertia carries it into the oncoming lane to the left. Always reduce speed before entering curves.",
+      "chapter": 3,
+      "tags": [
+        "curve",
+        "physics",
+        "inertia",
+        "speeding",
+        "diagram"
+      ],
+      "mutcd_code": "N/A \u2014 Instructional Diagram"
+    },
+    {
+      "id": "pave_single_broken_yellow",
+      "file": "diagrams/pave_single_broken_yellow.png",
+      "name": "Pavement Marking \u2014 Single Broken Yellow Centerline",
+      "meaning": "A single, broken yellow centerline shows the center of a two-way, two-lane road. Passing is permitted from either side when safe. You must use the lane of oncoming traffic to pass.",
+      "chapter": 2,
+      "tags": [
+        "pavement marking",
+        "yellow",
+        "broken",
+        "passing",
+        "centerline"
+      ],
+      "mutcd_code": "MUTCD 3B.01 \u2014 Single Broken Yellow Centerline"
+    },
+    {
+      "id": "pave_double_solid_yellow",
+      "file": "diagrams/pave_double_solid_yellow.png",
+      "name": "Pavement Marking \u2014 Double Solid Yellow Centerline",
+      "meaning": "Double solid yellow lines \u2014 no passing permitted in either direction even without a No Passing sign.",
+      "chapter": 2,
+      "tags": [
+        "pavement marking",
+        "yellow",
+        "solid",
+        "no passing",
+        "centerline"
+      ],
+      "mutcd_code": "MUTCD 3B.01 \u2014 Double Solid Yellow Centerline"
+    },
+    {
+      "id": "pave_solid_broken_combo",
+      "file": "diagrams/pave_solid_broken_combo.png",
+      "name": "Pavement Marking \u2014 Solid/Broken Yellow Combination",
+      "meaning": "One solid + one broken yellow line: passing is allowed only from the side with the broken line. If the solid line is on your side, you may not pass.",
+      "chapter": 2,
+      "tags": [
+        "pavement marking",
+        "yellow",
+        "combination",
+        "passing",
+        "centerline"
+      ],
+      "mutcd_code": "MUTCD 3B.01 \u2014 Solid/Broken Yellow Combination"
+    },
+    {
+      "id": "pave_center_turn_lane",
+      "file": "diagrams/pave_center_turn_lane.png",
+      "name": "Pavement Marking \u2014 Center Turn Lane (Three-Lane Highway)",
+      "meaning": "Three-lane or five-lane highway: solid outside yellow lines mean no passing; inside broken yellow and solid yellow lines allow vehicles traveling either direction to use the center lane for left turns only.",
+      "chapter": 2,
+      "tags": [
+        "center lane",
+        "turn lane",
+        "three-lane",
+        "pavement marking"
+      ],
+      "mutcd_code": "MUTCD 3B.20 \u2014 Center Two-Way Left Turn Lane"
+    },
+    {
+      "id": "pave_multilane_broken_white",
+      "file": "diagrams/pave_multilane_broken_white.png",
+      "name": "Pavement Marking \u2014 Multi-Lane with Broken White Lines",
+      "meaning": "Multi-lane highways without medians: broken white lines separate lanes of same-direction traffic. You may cross broken white lines to change lanes when safe; you may not cross double yellow centerlines.",
+      "chapter": 2,
+      "tags": [
+        "pavement marking",
+        "white",
+        "broken",
+        "lane change",
+        "multi-lane"
+      ],
+      "mutcd_code": "MUTCD 3B.04 \u2014 Broken White Lane Line"
+    },
+    {
+      "id": "pave_divided_highway_markings",
+      "file": "diagrams/pave_divided_highway_markings.png",
+      "name": "Pavement Marking \u2014 Divided Highway (Limited Access)",
+      "meaning": "Limited access highways with medians: right edge marked with solid white; left edge of each side marked with solid yellow; travel lanes separated by broken white lines.",
+      "chapter": 2,
+      "tags": [
+        "pavement marking",
+        "divided highway",
+        "limited access",
+        "median"
+      ],
+      "mutcd_code": "MUTCD 3B.04 \u2014 Divided Highway Markings"
+    },
+    {
+      "id": "diag_blindspots",
+      "file": "diagrams/diag_blindspots.png",
+      "name": "Vehicle Blind Spots Diagram",
+      "meaning": "Illustrates the blind spot zones around a passenger vehicle that cannot be seen in rearview or side mirrors. Always check blind spots by looking over your shoulder before changing lanes or merging.",
+      "chapter": 3,
+      "tags": [
+        "blind spots",
+        "mirrors",
+        "lane change",
+        "safety",
+        "diagram"
+      ],
+      "mutcd_code": "N/A \u2014 Instructional Diagram"
+    },
+    {
+      "id": "diag_handsignal_left",
+      "file": "diagrams/diag_handsignal_left.png",
+      "name": "Hand Signal \u2014 Left Turn",
+      "meaning": "Left arm extended horizontally out the window signals a left turn. Used when vehicle turn signals are inoperative.",
+      "chapter": 3,
+      "tags": [
+        "hand signal",
+        "left turn",
+        "diagram"
+      ],
+      "mutcd_code": "N/A \u2014 Instructional Diagram"
+    },
+    {
+      "id": "diag_handsignal_right",
+      "file": "diagrams/diag_handsignal_right.png",
+      "name": "Hand Signal \u2014 Right Turn",
+      "meaning": "Left arm bent upward at the elbow (pointing up) out the window signals a right turn. Used when vehicle turn signals are inoperative.",
+      "chapter": 3,
+      "tags": [
+        "hand signal",
+        "right turn",
+        "diagram"
+      ],
+      "mutcd_code": "N/A \u2014 Instructional Diagram"
+    },
+    {
+      "id": "diag_handsignal_slow_stop",
+      "file": "diagrams/diag_handsignal_slow_stop.png",
+      "name": "Hand Signal \u2014 Slow or Stop",
+      "meaning": "Left arm bent downward at the elbow (pointing down) out the window signals slowing or stopping. Used when vehicle brake lights or turn signals are inoperative.",
+      "chapter": 3,
+      "tags": [
+        "hand signal",
+        "slow",
+        "stop",
+        "diagram"
+      ],
+      "mutcd_code": "N/A \u2014 Instructional Diagram"
+    }
+  ]
+}
