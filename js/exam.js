@@ -1,6 +1,6 @@
 // ============================================================
-//  PA DMV Study v02 — exam.js
-//  18-question mock exam, 15 correct to pass (83%)
+//  PA DMV Study v04 — exam.js
+//  18-question mock exam · localStorage persistence · Reset
 // ============================================================
 
 const Exam = (() => {
@@ -10,9 +10,68 @@ const Exam = (() => {
 
   const shuffle = a => [...a].sort(() => Math.random() - .5);
 
+  // ── PERSISTENCE ─────────────────────────────────────────
+  function saveKey()   { return `pa_dmv_exam_state_${pId}`; }
+  function saveState() {
+    if (!pId) return;
+    localStorage.setItem(saveKey(), JSON.stringify({
+      questions: questions.map(q => q.id),
+      answers, currentQ
+    }));
+  }
+  function loadState() {
+    if (!pId) return null;
+    try { return JSON.parse(localStorage.getItem(saveKey())); } catch { return null; }
+  }
+  function clearState() {
+    if (pId) localStorage.removeItem(saveKey());
+  }
+
+  // ── ENTRY POINT ─────────────────────────────────────────
   function render(containerId, profileId) {
     cId = containerId; pId = profileId;
-    renderIntro();
+    const saved = loadState();
+    if (saved && saved.questions?.length) {
+      showResumePrompt(saved);
+    } else {
+      renderIntro();
+    }
+  }
+
+  function showResumePrompt(saved) {
+    const answeredCount = Object.keys(saved.answers).length;
+    document.getElementById(cId).innerHTML = `
+      <div class="exam-intro">
+        <div class="exam-intro-badge"><i class="fa-solid fa-graduation-cap"></i> Official Format</div>
+        <h2>PA DMV Mock Exam</h2>
+        <div style="background:var(--blue-pale);border:1.5px solid var(--blue-light);border-radius:var(--radius);padding:18px 20px;margin-bottom:22px;text-align:left;">
+          <div style="font-weight:700;color:var(--blue-dark);margin-bottom:6px;">
+            <i class="fa-solid fa-clock-rotate-left"></i> Exam in progress
+          </div>
+          <div style="font-size:14px;color:var(--gray-700);">
+            Question ${saved.currentQ + 1} of ${TOTAL} · ${answeredCount} of ${TOTAL} answered
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;margin-bottom:20px;">
+          <button class="btn btn-primary btn-lg" style="flex:1;" id="exam-resume">
+            <i class="fa-solid fa-play"></i> Resume Exam
+          </button>
+          <button class="btn btn-ghost" id="exam-discard">
+            <i class="fa-solid fa-trash"></i> Discard &amp; New
+          </button>
+        </div>
+      </div>
+    `;
+    document.getElementById('exam-resume').addEventListener('click', () => restoreState(saved));
+    document.getElementById('exam-discard').addEventListener('click', () => { clearState(); renderIntro(); });
+  }
+
+  function restoreState(saved) {
+    const qMap = Object.fromEntries(PA_DATA.questions.map(q => [q.id, q]));
+    questions = saved.questions.map(id => qMap[id]).filter(Boolean);
+    answers   = saved.answers || {};
+    currentQ  = saved.currentQ || 0;
+    renderQuestion();
   }
 
   function renderIntro() {
@@ -28,11 +87,11 @@ const Exam = (() => {
           <div class="er-rule"><span class="er-val">No</span><span class="er-label">Time Limit</span></div>
         </div>
         <ul class="exam-tips-list">
-          <li>Questions are drawn from all topic areas, weighted by importance</li>
-          <li>You must answer all 18 before seeing your results</li>
+          <li>Questions drawn from all topic areas, weighted by importance</li>
+          <li>Answer all 18 before submitting for your score</li>
           <li>Need 15 correct (83%) to pass — same as the real PA test</li>
-          <li>Detailed explanations shown after submission</li>
-          <li>Use the question map to navigate and review before submitting</li>
+          <li>Your progress is saved automatically — close and resume any time</li>
+          <li>Use the question map to jump between questions before submitting</li>
         </ul>
         <button class="btn btn-primary btn-lg btn-block" id="exam-start">
           <i class="fa-solid fa-play"></i> Begin Exam
@@ -43,31 +102,28 @@ const Exam = (() => {
   }
 
   function startExam() {
-    // Stratified sampling across all modules
-    const targets = {
-      signals: 3, signs: 4, laws: 4, speed: 2, safe: 2, dui: 1, parking: 1, roadtest: 1
-    };
+    const targets = { signals:3, signs:4, laws:4, speed:2, safe:2, dui:1, parking:1, roadtest:1 };
     const pool = {};
-    PA_DATA.modules.forEach(m => { pool[m.id] = shuffle(PA_DATA.questions.filter(q => q.module === m.id)); });
-
+    PA_DATA.modules.forEach(m => {
+      pool[m.id] = shuffle(PA_DATA.questions.filter(q => q.module === m.id));
+    });
     questions = [];
     Object.entries(targets).forEach(([mod, count]) => {
       questions.push(...(pool[mod] || []).slice(0, count));
     });
-
-    // Fill any gap
     if (questions.length < TOTAL) {
       const used = new Set(questions.map(q => q.id));
       const extra = shuffle(PA_DATA.questions.filter(q => !used.has(q.id)));
       questions.push(...extra.slice(0, TOTAL - questions.length));
     }
     questions = shuffle(questions).slice(0, TOTAL);
-    answers = {};
-    currentQ = 0;
+    answers = {}; currentQ = 0;
+    clearState();
     renderQuestion();
   }
 
   function renderQuestion() {
+    saveState();
     const el = document.getElementById(cId);
     const q = questions[currentQ];
     const mod = PA_DATA.modules.find(m => m.id === q.module);
@@ -79,7 +135,12 @@ const Exam = (() => {
           <div class="exam-q-num"><i class="fa-solid fa-circle-question"></i> Question ${currentQ+1} of ${TOTAL}</div>
           ${mod ? `<div style="font-size:12px;color:var(--gray-500);margin-top:2px;"><i class="fa-solid ${mod.icon}"></i> ${mod.title}</div>` : ''}
         </div>
-        <div class="exam-answered-badge"><i class="fa-solid fa-check-double"></i> ${totalAnswered}/${TOTAL} answered</div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div class="exam-answered-badge"><i class="fa-solid fa-check-double"></i> ${totalAnswered}/${TOTAL}</div>
+          <button class="btn btn-ghost btn-sm" id="exam-reset-btn" title="Reset exam">
+            <i class="fa-solid fa-rotate-left"></i>
+          </button>
+        </div>
       </div>
       <div class="exam-progress-dots">
         ${questions.map((_, i) => `
@@ -106,8 +167,8 @@ const Exam = (() => {
           <i class="fa-solid fa-arrow-left"></i> Prev
         </button>
         <div class="exam-nav-center">
-          <button class="btn btn-ghost btn-sm exam-jump-toggle" id="exam-jt">
-            <i class="fa-solid fa-map"></i> Question Map
+          <button class="btn btn-ghost btn-sm" id="exam-jt">
+            <i class="fa-solid fa-map"></i> Map
           </button>
         </div>
         ${currentQ < TOTAL-1
@@ -134,32 +195,45 @@ const Exam = (() => {
         : ''}
     `;
 
-    // Option selection
     el.querySelectorAll('.exam-opt').forEach(btn => {
       btn.addEventListener('click', () => {
         answers[currentQ] = parseInt(btn.dataset.i);
         renderQuestion();
       });
     });
-
-    // Dot navigation
     el.querySelectorAll('.epd').forEach(dot => {
       dot.addEventListener('click', () => { currentQ = parseInt(dot.dataset.qi); renderQuestion(); });
     });
-
     document.getElementById('exam-prev')?.addEventListener('click', () => { currentQ--; renderQuestion(); });
     document.getElementById('exam-next')?.addEventListener('click', () => { currentQ++; renderQuestion(); });
     document.getElementById('exam-submit')?.addEventListener('click', submitExam);
-
     document.getElementById('exam-jt')?.addEventListener('click', () => {
       document.getElementById('exam-map').classList.toggle('hidden');
     });
     el.querySelectorAll('.ejm-btn').forEach(btn => {
       btn.addEventListener('click', () => { currentQ = parseInt(btn.dataset.qi); renderQuestion(); });
     });
+    document.getElementById('exam-reset-btn')?.addEventListener('click', confirmReset);
+  }
+
+  function confirmReset() {
+    showModal(`
+      <h2 class="modal-title"><i class="fa-solid fa-rotate-left" style="color:var(--orange);margin-right:8px;"></i>Reset Exam?</h2>
+      <p class="confirm-text">Your current exam progress will be lost. You'll return to the start screen.</p>
+      <div class="confirm-actions">
+        <button class="btn btn-secondary btn-block" onclick="closeModal()">Cancel</button>
+        <button class="btn btn-danger btn-block" id="confirm-exam-reset">Reset</button>
+      </div>
+    `);
+    document.getElementById('confirm-exam-reset').addEventListener('click', () => {
+      closeModal();
+      clearState();
+      render(cId, pId);
+    });
   }
 
   function submitExam() {
+    clearState();
     let score = 0;
     questions.forEach((q, i) => { if (answers[i] === q.answer) score++; });
     const passed = score >= PASS;
@@ -205,7 +279,7 @@ const Exam = (() => {
           }).join('')}
         </div>
         <div class="er-actions">
-          <button class="btn btn-primary" id="exam-retake"><i class="fa-solid fa-rotate"></i> Take Another Exam</button>
+          <button class="btn btn-primary" id="exam-retake"><i class="fa-solid fa-rotate"></i> New Exam</button>
           <button class="btn btn-secondary" id="exam-study"><i class="fa-solid fa-book-open"></i> Study Guide</button>
         </div>
       </div>

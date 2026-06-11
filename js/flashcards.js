@@ -432,12 +432,20 @@ const Flashcards = (() => {
           </div>
         </div>
       </div>
-      <div id="fc-actions" style="display:${flipped?'flex':'none'};gap:12px;justify-content:center;margin-bottom:12px;">
-        <button class="btn btn-danger" id="fc-review"><i class="fa-solid fa-rotate"></i> Review Again</button>
-        <button class="btn btn-success" id="fc-known"><i class="fa-solid fa-check"></i> Got It!</button>
-      </div>
-      <div id="fc-flip-area" style="display:${flipped?'none':'block'};text-align:center;">
-        <button class="btn btn-primary fc-flip-btn"><i class="fa-solid fa-rotate"></i> Flip Card</button>
+      <div class="fc-nav-row">
+        <button class="btn btn-ghost btn-sm fc-prev-btn" ${idx === 0 ? 'disabled' : ''}>
+          <i class="fa-solid fa-arrow-left"></i> Prev
+        </button>
+        <div id="fc-flip-area" style="display:${flipped?'none':'block'};">
+          <button class="btn btn-primary fc-flip-btn"><i class="fa-solid fa-rotate"></i> Flip</button>
+        </div>
+        <div id="fc-actions" style="display:${flipped?'flex':'none'};gap:8px;">
+          <button class="btn btn-danger btn-sm" id="fc-review"><i class="fa-solid fa-rotate"></i> Again</button>
+          <button class="btn btn-success btn-sm" id="fc-known"><i class="fa-solid fa-check"></i> Got It</button>
+        </div>
+        <button class="btn btn-ghost btn-sm fc-next-btn">
+          Skip <i class="fa-solid fa-arrow-right"></i>
+        </button>
       </div>
     `;
 
@@ -457,11 +465,29 @@ const Flashcards = (() => {
     el.querySelector('.fc-flip-btn')?.addEventListener('click', flipFn);
     document.getElementById('fc-review')?.addEventListener('click', () => { review.add(idx); next(); });
     document.getElementById('fc-known')?.addEventListener('click', () => { known.add(idx); next(); });
+    // Prev / Skip navigation — no Got It/Review required
+    el.querySelector('.fc-prev-btn')?.addEventListener('click', () => {
+      if (idx > 0) { idx--; flipped = false; renderCard(); }
+    });
+    el.querySelector('.fc-next-btn')?.addEventListener('click', () => {
+      // Skip without marking — just advance
+      next();
+    });
+    // Keyboard shortcuts: left/right arrows navigate, space flips
+    document.onkeydown = (e) => {
+      if (['INPUT','TEXTAREA'].includes(document.activeElement?.tagName)) return;
+      if (e.key === 'ArrowRight') { el.querySelector('.fc-next-btn')?.click(); }
+      else if (e.key === 'ArrowLeft') { el.querySelector('.fc-prev-btn')?.click(); }
+      else if (e.key === ' ') { e.preventDefault(); el.querySelector('.fc-flip-btn')?.click() || cardEl?.click(); }
+      else if (e.key === '1') { document.getElementById('fc-known')?.click(); }
+      else if (e.key === '2') { document.getElementById('fc-review')?.click(); }
+    };
   }
 
-  function next() { idx++; flipped = false; renderCard(); }
+  function next() { document.onkeydown = null; idx++; flipped = false; renderCard(); }
 
   function summary() {
+    document.onkeydown = null;
     const el = document.getElementById(cId);
     const total = cards.length;
     const pct = Math.round((known.size / total) * 100);

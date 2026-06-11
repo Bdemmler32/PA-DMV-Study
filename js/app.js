@@ -1,5 +1,5 @@
 // ============================================================
-//  PA DMV Study v02 — app.js
+//  PA DMV Study v04 — app.js
 //  Main controller: profiles, PIN, navigation, dashboard
 // ============================================================
 
@@ -21,6 +21,8 @@
   // ══════════════════════════════════════════════════════════
   function showProfileScreen() {
     currentProfile = null;
+    closeModal();           // close any open modal
+    removeKeyListener();    // remove any PIN keyboard listeners
     switchScreen('profile-screen');
     renderProfileSlots();
   }
@@ -535,11 +537,19 @@
   //  HELPERS
   // ══════════════════════════════════════════════════════════
   function switchScreen(id) {
-    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.screen').forEach(s => {
+      s.classList.remove('active');
+      s.style.display = '';
+    });
     const target = document.getElementById(id);
     target.classList.add('active');
-    if (id === 'app-screen') target.style.display = 'flex';
-    else target.style.display = '';
+    if (id === 'app-screen') {
+      target.style.display = 'flex';
+    } else {
+      // Profile screen — scroll to top, ensure it sits above everything
+      target.scrollTop = 0;
+      window.scrollTo(0, 0);
+    }
   }
 
   function escHtml(str) {
