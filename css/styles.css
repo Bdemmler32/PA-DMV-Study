@@ -34,7 +34,7 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
   --white:       #ffffff;
 
   --sidebar-w:   240px;
-  --topbar-h:    56px;
+  --topbar-h:    64px;
   --bottomnav-h: 62px;
   --radius:      10px;
   --radius-lg:   16px;
@@ -281,10 +281,18 @@ body {
 /* ── TOPBAR (mobile only) ────────────────────────────────── */
 #topbar {
   display: none;
-  height: var(--topbar-h); background: var(--blue-dark);
-  padding: 0 16px; align-items: center; justify-content: space-between;
-  position: sticky; top: 0; z-index: 80;
+  height: var(--topbar-h);
+  min-height: var(--topbar-h);
+  background: var(--blue-dark);
+  padding: 0 20px;
+  align-items: center;
+  justify-content: space-between;
+  /* fixed so it always pins to top regardless of scroll container */
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 80;
   border-bottom: 1px solid rgba(255,255,255,.08);
+  flex-shrink: 0;
 }
 .topbar-left { display: flex; align-items: center; gap: 10px; }
 .tb-shield {
@@ -328,10 +336,13 @@ body {
 #main-content {
   flex: 1;
   margin-left: var(--sidebar-w);
-  padding: 32px 36px;
+  padding: 32px 36px 0;
   min-height: 100vh;
 }
-#tab-content { max-width: 860px; }
+#tab-content {
+  max-width: 860px;
+  padding-bottom: 56px;   /* bottom breathing room — desktop */
+}
 
 /* ── DASHBOARD ─────────────────────────────────────────────── */
 .dash-header { margin-bottom: 28px; }
@@ -555,6 +566,25 @@ body {
 
 /* Sign Detail Modal */
 .sign-detail { text-align: center; padding: 8px 0; }
+/* Image wrapper — relative so zoom icon can be absolute top-right */
+.sign-detail-img-wrap {
+  display: inline-block; position: relative; cursor: zoom-in;
+  margin-bottom: 16px; border-radius: 12px;
+  border: 1.5px solid var(--gray-200); background: white; padding: 10px;
+}
+.sign-detail-main-img {
+  display: block; max-height: 160px; max-width: 220px;
+  object-fit: contain; border-radius: 8px;
+}
+.sign-detail-zoom-btn {
+  position: absolute; top: 8px; right: 8px;
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--blue); color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; pointer-events: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,.18);
+}
+/* Legacy selector kept for any leftover refs */
 .sign-detail-img { margin-bottom: 16px; display: flex; justify-content: center; }
 .sign-detail-img img { max-height: 140px; max-width: 200px; object-fit: contain; border-radius: 10px; border: 1.5px solid var(--gray-200); background: white; padding: 10px; }
 .sign-detail h3 { font-family: var(--font-cond); font-size: 22px; font-weight: 800; color: var(--blue-dark); margin-bottom: 6px; }
@@ -900,8 +930,17 @@ body {
   #sidebar { display: none; }
   #topbar { display: flex; }
   #bottom-nav { display: flex; }
-  #main-content { margin-left: 0; padding: 20px 16px; padding-bottom: calc(var(--bottomnav-h) + 16px); }
-  #app-screen.active { flex-direction: column; }
+  #main-content {
+    margin-left: 0;
+    padding: 20px 16px 0;
+    /* push content below the fixed topbar */
+    padding-top: calc(var(--topbar-h) + 20px);
+  }
+  #tab-content {
+    /* clear fixed bottom nav + safe area + breathing room */
+    padding-bottom: calc(var(--bottomnav-h) + env(safe-area-inset-bottom) + 32px);
+  }
+  #app-screen.active { flex-direction: column; overflow-y: auto; }
   .dash-stats { grid-template-columns: repeat(2, 1fr); }
   .dash-actions { grid-template-columns: 1fr; }
   .action-card.featured-action { grid-column: 1; }
