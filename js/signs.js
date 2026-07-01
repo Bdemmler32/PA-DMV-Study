@@ -128,13 +128,10 @@ const SignsGallery = (() => {
     const hasCode = sign.mutcd_code && !sign.mutcd_code.startsWith('N/A');
     showModal(`
       <div class="sign-detail">
-        <div class="sign-detail-img" style="cursor:zoom-in;" onclick="openFullImage('assets/${sign.file}','${sign.name.replace(/'/g,"\\'")}')">
-          <img src="assets/${sign.file}" alt="${sign.name}"
-            style="max-height:180px;max-width:260px;object-fit:contain;border-radius:10px;border:1.5px solid var(--gray-200);background:white;padding:12px;"
+        <div class="sign-detail-img-wrap" onclick="openFullImage('assets/${sign.file}','${sign.name.replace(/'/g,"\\'")}')">
+          <img src="assets/${sign.file}" alt="${sign.name}" class="sign-detail-main-img"
             onerror="this.style.display='none'">
-          <div style="font-size:11px;color:var(--gray-400);margin-top:6px;">
-            <i class="fa-solid fa-magnifying-glass-plus"></i> Click image to enlarge
-          </div>
+          <div class="sign-detail-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
         </div>
         <h3>${sign.name}</h3>
         <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:14px;">

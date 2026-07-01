@@ -1,5 +1,5 @@
 // ============================================================
-//  PA DMV Study v04 — app.js
+//  PA DMV Study v05 — app.js
 //  Main controller: profiles, PIN, navigation, dashboard
 // ============================================================
 
@@ -446,12 +446,12 @@
         <button class="action-card" data-tab="signs">
           <div class="action-icon"><i class="fa-solid fa-sign-hanging"></i></div>
           <div class="action-label">Road Signs</div>
-          <div class="action-sub">Browse all 158 signs</div>
+          <div class="action-sub">Browse all 163 signs</div>
         </button>
         <button class="action-card" data-tab="flashcards">
           <div class="action-icon"><i class="fa-solid fa-layer-group"></i></div>
           <div class="action-label">Flashcards</div>
-          <div class="action-sub">${PA_DATA.flashcards.length} key facts to memorize</div>
+          <div class="action-sub">109 flashcards with images</div>
         </button>
         <button class="action-card" data-tab="quiz">
           <div class="action-icon"><i class="fa-solid fa-pencil"></i></div>
